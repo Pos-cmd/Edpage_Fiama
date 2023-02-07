@@ -1,13 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Fiama.</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <header class="container_header">
+      <div class="header_top">
+        <div class="header_logo"><img src="assets/img/logo.png" alt="" /></div>
+        <div class="header_contact_search">
+          <div class="header_contact">
+            <div class="header_contact_icon">
+              <i class="fa-solid fa-phone"></i>
+            </div>
+            <div class="header_contact_info">
+              <h6>PHONE</h6>
+              <p>
+                <a href="tel:0123456789">+0123-456-789</a>
+              </p>
+            </div>
+          </div>
+          <div class="header_search_container">
+            <form class="header_search">
+              <input
+                class="header_search_textfield"
+                type="text"
+                name="search"
+                placeholder="search here..."
+              />
+              <button class="header_search_btn" type="submit">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="header_mini_cart">
+          <span class="mini_cart_icon"
+            ><i class="fa-solid fa-bag-shopping"></i></span>
+          <h6>
+            <span>Your cart</span>
+            <span>$89.25</span>
+          </h6>
+        </div>
+      </div>
+      <hr />
+      <div class="header_bottom">
+        <ul class="nav">
+          <li class="nav_item"><a class="nav_link" href="#">HOME</a></li>
+          <li class="nav_item"><a class="nav_link" href="#">PAGES</a></li>
+          <li class="nav_item"><a class="nav_link" href="#">SHOP</a></li>
+          <li class="nav_item"><a class="nav_link" href="#">PORTFOLIO</a></li>
+          <li class="nav_item"><a class="nav_link" href="#">NEWS</a></li>
+          <li class="nav_item"><a class="nav_link" href="#">CONTACT</a></li>
+        </ul>
+      </div>
+    </header>
+    <section class="container_hero">
+      <div class="hero_slider_container slider_container">
+        <div class="slider">
+          <img id="slide-1" src="/assets/img/fleur-2.jpg" alt="fleur-1" />
+          <img id="slide-2" src="/assets/img/fleur-3.jpg" alt="fleur-2" />
+          <img id="slide-3" src="/assets/img/fleur-2.jpg" alt="fleur-1" />
+        </div>
+
+        <div class="slider_nav">
+          <a class="slide_btn slider_nav_right" href="#slide-1"></a>
+          <a class="slide_btn slider_nav_left" href="#slide-2"></a>
+        </div>
+      </div>
+      <div class="hero_message">
+        <h2 class="hero_message_title">Fresh Flower</h2>
+        <p class="hero_message_info-1">Natural & beautiful Flower Here</p>
+        <hr />
+        <p class="hero_message_info-2">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, atque.
+        </p>
+        <button class="btn_shop_now"><a href="#">Shop Now</a></button>
+      </div>
+      <div class="container_feature">
+        <div class="features">
+          <div class="feature_item">
+            <div class="feature_icon">
+              <i class="fa-solid fa-dolly"></i>
+            </div>
+            <div class="feature_info">
+              <h5>Free Shipping</h5>
+              <p>On all orders over $49.00</p>
+            </div>
+          </div>
+          <div class="feature_item">
+            <div class="feature_icon">
+              <i class="fa-solid fa-sack-dollar"></i>
+            </div>
+            <div class="feature_info">
+              <h5>15 days returns</h5>
+              <p>Moneyback guarantee</p>
+            </div>
+          </div>
+          <div class="feature_item">
+            <div class="feature_icon">
+              <i class="fa-solid fa-credit-card"></i>
+            </div>
+            <div class="feature_info">
+              <h5>Secure checkout</h5>
+              <p>Protected by Paypal</p>
+            </div>
+          </div>
+          <div class="feature_item">
+            <div class="feature_icon">
+              <i class="fa-solid fa-gifts"></i>
+            </div>
+            <div class="feature_info">
+              <h5>Offer & gift here</h5>
+              <p>On all orders over</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="container_banner">
+      <div class="banner_area">
+        <div class="banner">
+          <div class="banner_item"><a href="#" class="banner_link"><img src="/assets/img/banner-25%.jpg" class="banner_img"></a></div>
+          <div class="banner_item"><a href="#" class="banner_link"><img src="/assets/img/banner-30%.jpg" class="banner_img"></a></div>
+          <div class="banner_item"><a href="#" class="banner_link"><img src="/assets/img/banner-40%.jpg" class="banner_img"></a></div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
