@@ -1,0 +1,18 @@
+@mixin flex-el($justify: center, $align: center) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+} ;
+
+
+@mixin clearlink($color: $text-primary-color){
+    text-decoration: none;
+    color: $color;
+}
+
+@mixin font-custom($font-size: 16px, $font-weight: 400, $color: $text-primary-color, $line-height: normal){
+  font-size: $font-size;
+    color: $color;
+    font-weight: $font-weight;
+    line-height: $line-height;
+}

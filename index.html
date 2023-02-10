@@ -1,13 +1,341 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fiama.</title>
-    <link rel="stylesheet" href="sass/main.css">
-</head>
-<body>
-    
-</body>
+    <link rel="stylesheet" href="sass/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="header">
+      <nav class="nav">
+        <div class="nav-top">
+          <div class="nav-top__logo">
+            <a href="#" class="nav__logo-link"
+              ><img src="/assets/img/logo.png" alt="logo"
+            /></a>
+          </div>
+          <div class="contact-search">
+            <ul class="contact-search__contact mini-cart">
+              <li class="contact-search__contact-item mini-cart__item">
+                <i class="fas fa-phone"></i>
+              </li>
+              <li class="contact-search__contact-item mini-cart__item">
+                PHONE <br />
+                <a href="+0123-456-789">+0123-456-789</a>
+              </li>
+            </ul>
+            <div class="contact-search__search">
+              <div class="contact-search">
+                <input
+                  class="input-search"
+                  type="search"
+                  placeholder="Search here..."
+                />
+                <button class="btn btn__search">
+                  <i class="fas fa-magnifying-glass"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <ul class="nav-top__ship mini-cart">
+            <li class="nav-top__ship-item mini-cart__item">
+              <i class="fas fa-bag-shopping"></i>
+            </li>
+            <li class="nav-top__ship-item mini-cart__item">
+              YOUR CART <br /><span>$89.25</span>
+            </li>
+          </ul>
+        </div>
+        <hr />
+        <div class="nav-bottom">
+          <ul class="nav-bottom__items">
+            <li class="nav-bottom__item">
+              <a href="#">HOME</a>
+              <div class="nav-bottom__dropdown-block">
+                <ul class="nav-bottom__dropdown-items">
+                  <li class="nav-bottom__dropdown-item">
+                    <a href="#" class="nav-bottom__dropdown-link"
+                      >Home Style - 01</a
+                    >
+                  </li>
+                  <li class="nav-bottom__dropdown-item">
+                    <a href="#" class="nav-bottom__dropdown-link"
+                      >Home Style - 02</a
+                    >
+                  </li>
+                  <li class="nav-bottom__dropdown-item">
+                    <a href="#" class="nav-bottom__dropdown-link"
+                      >Home Style - 03</a
+                    >
+                  </li>
+                  <li class="nav-bottom__dropdown-item">
+                    <a href="#" class="nav-bottom__dropdown-link"
+                      >Home Style - 04</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-bottom__item">
+              <a href="#">PAGES</a>
+              <div class="nav-bottom__dropdown-block">
+                <ul class="nav-bottom__dropdown-items ">
+                  <li class="nav-bottom__dropdown-item--head">
+                    <a href="#" class="nav-bottom__dropdown-link">Inner Pages</a>
+                  </li>
+                  <li class="nav-bottom__dropdown-item">
+                    <a href="#" class="nav-bottom__dropdown-link">About Us</a>
+                  </li>
+                  <li class="nav-bottom__dropdown-item">
+                    <a href="#" class="nav-bottom__dropdown-link">Portfolio</a>
+                  </li>
+                  <li class="nav-bottom__dropdown-item">
+                    <a href="#" class="nav-bottom__dropdown-link">Portfolio - 02</a>
+                  </li>
+                  <li class="nav-bottom__dropdown-item">
+                    <a href="#" class="nav-bottom__dropdown-link">Portfolio Details</a>
+                  </li>
+                  <li class="nav-bottom__dropdown-item">
+                    <a href="#" class="nav-bottom__dropdown-link">FAQ</a>
+                  </li>
+                </ul>
+                <ul class="nav-bottom__dropdown-items ">
+                  <li class="nav-bottom__dropdown-item--head">
+                    <a href="#" class="nav-bottom__dropdown-link">Inner Pages</a>
+                  </li>
+                  <li class="nav-bottom__dropdown-item">
+                    <a href="#" class="nav-bottom__dropdown-link">Google Map Location</a>
+                  </li>
+                  <li class="nav-bottom__dropdown-item">
+                    <a href="#" class="nav-bottom__dropdown-link">404</a>
+                  </li>
+                  <li class="nav-bottom__dropdown-item">
+                    <a href="#" class="nav-bottom__dropdown-link">Contact</a>
+                  </li>
+                  <li class="nav-bottom__dropdown-item">
+                    <a href="#" class="nav-bottom__dropdown-link">Coming Soon</a>
+                  </li>
+                </ul>
+                <ul class="nav-bottom__dropdown-items ">
+                  <li class="nav-bottom__dropdown-item--head">
+                    <a href="#" class="nav-bottom__dropdown-link">Shop Pages</a>
+                  </li>
+                  <li class="nav-bottom__dropdown-item">
+                    <a href="#" class="nav-bottom__dropdown-link">Shop</a>
+                  </li>
+                  <li class="nav-bottom__dropdown-item">
+                    <a href="#" class="nav-bottom__dropdown-link">Shop Grid</a>
+                  </li>
+                  <li class="nav-bottom__dropdown-item">
+                    <a href="#" class="nav-bottom__dropdown-link">Shop Left Sidebar</a>
+                  </li>
+                  <li class="nav-bottom__dropdown-item">
+                    <a href="#" class="nav-bottom__dropdown-link">Shop Right Sidebar</a>
+                  </li>
+                  <li class="nav-bottom__dropdown-item">
+                    <a href="#" class="nav-bottom__dropdown-link">Shop Details</a>
+                  </li>
+                </ul>
+                <ul class="nav-bottom__dropdown-items ">
+                  <li class="nav-bottom__dropdown-item--head">
+                    <a href="#" class="nav-bottom__dropdown-link">Blog Pages</a>
+                  </li>
+                  <li class="nav-bottom__dropdown-item">
+                    <a href="#" class="nav-bottom__dropdown-link">News</a>
+                  </li>
+                  <li class="nav-bottom__dropdown-item">
+                    <a href="#" class="nav-bottom__dropdown-link">News Grid</a>
+                  </li>
+                  <li class="nav-bottom__dropdown-item">
+                    <a href="#" class="nav-bottom__dropdown-link">News Left Sidebar</a>
+                  </li>
+                  <li class="nav-bottom__dropdown-item">
+                    <a href="#" class="nav-bottom__dropdown-link">News Right Sidebar</a>
+                  </li>
+                  <li class="nav-bottom__dropdown-item">
+                    <a href="#" class="nav-bottom__dropdown-link">News Details</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-bottom__item">
+              <a href="#">SHOP</a>
+              <div class="nav-bottom__dropdown-block">
+                <ul class="nav-bottom__dropdown-items">
+                  <li class="nav-bottom__dropdown-item">
+                    <a href="#" class="nav-bottom__dropdown-link">Shop</a>
+                  </li>
+                  <li class="nav-bottom__dropdown-item">
+                    <a href="#" class="nav-bottom__dropdown-link">Shop Grid</a>
+                  </li>
+                  <li class="nav-bottom__dropdown-item">
+                    <a href="#" class="nav-bottom__dropdown-link"
+                      >Shop Left Sidebar</a
+                    >
+                  </li>
+                  <li class="nav-bottom__dropdown-item">
+                    <a href="#" class="nav-bottom__dropdown-link"
+                      >Shop Right Sidebar</a
+                    >
+                  </li>
+                  <li class="nav-bottom__dropdown-item">
+                    <a href="#" class="nav-bottom__dropdown-link"
+                      >Shop Details</a
+                    >
+                  </li>
+                  <li class="nav-bottom__dropdown-item">
+                    <a href="#" class="nav-bottom__dropdown-link"
+                      >Other Pages>></a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-bottom__item">
+              <a href="#">PORTFOLIO</a>
+              <div class="nav-bottom__dropdown-block">
+                <ul class="nav-bottom__dropdown-items">
+                  <li class="nav-bottom__dropdown-item">
+                    <a href="#" class="nav-bottom__dropdown-link">Portfolio</a>
+                  </li>
+                  <li class="nav-bottom__dropdown-item">
+                    <a href="#" class="nav-bottom__dropdown-link"
+                      >Portfolio - 02</a
+                    >
+                  </li>
+                  <li class="nav-bottom__dropdown-item">
+                    <a href="#" class="nav-bottom__dropdown-link"
+                      >Portfolio Details</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-bottom__item">
+              <a href="#">NEWS</a>
+              <div class="nav-bottom__dropdown-block">
+                <ul class="nav-bottom__dropdown-items">
+                  <li class="nav-bottom__dropdown-item">
+                    <a href="#" class="nav-bottom__dropdown-link">News</a>
+                  </li>
+                  <li class="nav-bottom__dropdown-item">
+                    <a href="#" class="nav-bottom__dropdown-link">News Grid</a>
+                  </li>
+                  <li class="nav-bottom__dropdown-item">
+                    <a href="#" class="nav-bottom__dropdown-link"
+                      >News Left Sidebar</a
+                    >
+                  </li>
+                  <li class="nav-bottom__dropdown-item">
+                    <a href="#" class="nav-bottom__dropdown-link"
+                      >News Right Sidebar</a
+                    >
+                  </li>
+                  <li class="nav-bottom__dropdown-item">
+                    <a href="#" class="nav-bottom__dropdown-link"
+                      >News Details</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-bottom__item">
+              <a href="#">CONTACT</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="hero">
+        <div class="hero-slider">
+          <input type="radio" name="images" id="i1" checked />
+          <input type="radio" name="images" id="i2" />
+
+          <div class="hero-text bg-trans" id="hero-text">
+            <div class="hero-text__container bg-trans">
+              <h2 class="hero-text__title bg-trans">Fresh Flower</h2>
+              <h4 class="hero-text__info bg-trans">
+                Natural & Beautiful Flower Here
+              </h4>
+              <hr />
+              <h5 class="hero-text__description bg-trans">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse
+                distinctio doloremque itaque excepturi consequuntur pariatur?
+              </h5>
+              <button class="hero-text__btn-shop">Shop Now</button>
+            </div>
+          </div>
+
+          <div class="slider-btn">
+            <label for="i1" class="slider-btn__pre"
+              ><i class="fas fa-angle-left"></i
+            ></label>
+            <label for="i2" class="slider-btn__nxt"
+              ><i class="fas fa-angle-right"></i
+            ></label>
+          </div>
+
+          <div class="slide__img" id="one">
+            <img src="/assets/img/fleur-2.jpg" alt="" />
+          </div>
+
+          <div class="slide__img" id="two">
+            <img src="/assets/img/fleur-3.jpg " alt="" />
+            <!-- <div class="slider-btn">
+              <label for="i1" class="slider-btn__pre"
+                ><i class="fas fa-angle-left"></i
+              ></label>
+              <label for="i1" class="slider-btn__nxt"
+                ><i class="fas fa-angle-right"></i
+              ></label>
+            </div> -->
+          </div>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature__items">
+          <div class="feature__item">
+            <div class="feature__icon"><i class="fa-solid fa-dolly"></i></div>
+            <feature__info>
+              <h5>Free shipping</h5>
+              <span>On all orders over 149.00</span>
+            </feature__info>
+          </div>
+          <div class="feature__item">
+            <div class="feature__icon">
+              <i class="fa-solid fa-sack-dollar"></i>
+            </div>
+            <feature__info>
+              <h5>15 days returns</h5>
+              <span>Moneyback guarantee</span>
+            </feature__info>
+          </div>
+          <div class="feature__item">
+            <div class="feature__icon">
+              <i class="fa-solid fa-credit-card"></i>
+            </div>
+            <feature__info>
+              <h5>Secure checkout</h5>
+              <span>Protected by Paypal</span>
+            </feature__info>
+          </div>
+          <div class="feature__item">
+            <div class="feature__icon"><i class="fa-solid fa-gifts"></i></div>
+            <feature__info>
+              <h5>Offer & gift here</h5>
+              <span>On all orders over</span>
+            </feature__info>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
