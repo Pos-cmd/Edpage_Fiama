@@ -1,0 +1,49 @@
+@mixin flex-el($justify: center, $align: center, $direction: row) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+@mixin clearlink($color: $text-primary-color) {
+  text-decoration: none;
+  color: $color;
+}
+
+@mixin font-custom(
+  $font-size: 16px,
+  $font-weight: 400,
+  $color: $text-primary-color,
+  $line-height: normal
+) {
+  font-size: $font-size;
+  color: $color;
+  font-weight: $font-weight;
+  line-height: $line-height;
+}
+
+@mixin hr-custom() {
+  border: none;
+  background-color: $primary-color;
+  width: $width;
+  height: 2px;
+  margin-top: 1rem;
+}
+
+@mixin media-lg {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin media-md {
+  @media screen and (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin media-mb {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
