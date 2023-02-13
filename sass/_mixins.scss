@@ -47,3 +47,9 @@
     @content;
   }
 }
+
+@mixin media-sm {
+  @media screen and (max-width: 576px) {
+    @content;
+  }
+}

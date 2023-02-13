@@ -176,3 +176,59 @@
     display: none;
   }
 }
+
+@include media-sm{
+
+
+.nav-top {
+    display: flex;
+    flex-direction: column;
+    height: 8rem;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .nav {
+    height: 8rem;
+  }
+  
+  .nav-top__ship.mini-card {
+    width: 100%;
+  }
+  
+  .nav-top__ship.mini-card {
+    justify-content: center;
+  }
+  
+  .nav-top__ship.mini-card {
+    /* width: 100%; */
+    width: 60%;
+  }
+  
+  .nav-top__ship-item.mini-card__item {
+    width: 100%;
+  }
+  
+  
+  
+  .hero-text__container.bg-trans {
+    margin: auto 15px;
+  }
+  
+  .hero-text__container.bg-trans {
+    width: 100%;
+  }
+  
+  .feature__items {
+    margin: auto 15px;
+  }
+  
+  .main__container {
+    margin: 9rem 15px;
+  }
+  
+  .blog__item {
+    width: 35rem;
+  }
+  
+}
