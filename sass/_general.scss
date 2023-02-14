@@ -571,10 +571,18 @@ a {
     text-align: center;
     padding: 2px 0;
     font-weight: bold;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     span {
       background-color: transparent;
     }
+
+  }
+  .hot{
+    background-color: $primary-color;
   }
 }
 

@@ -589,9 +589,16 @@ a:hover {
   text-align: center;
   padding: 2px 0;
   font-weight: bold;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .card__img-badge span {
   background-color: transparent;
+}
+.card .hot {
+  background-color: #e55472;
 }
 
 .blog {
@@ -831,6 +838,7 @@ a:hover {
   }
   .card__item {
     width: 12rem;
+    height: 409px;
   }
   .card .fa-solid.fa-basket-shopping.card__icon {
     display: block;
