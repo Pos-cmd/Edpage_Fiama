@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Poppins&display=swap");
 @keyframes slideUp {
   0% {
@@ -856,7 +857,7 @@ a:hover {
     gap: 2em;
   }
   .blog__item {
-    width: 30rem;
+    width: 27rem;
   }
   .footer-bottom {
     height: 100%;
@@ -900,48 +901,55 @@ a:hover {
   .hero-text__container {
     margin: auto 10rem;
   }
-}
-@media screen and (max-width: 992px) and (max-width: 1200px) {
   .feature__items {
     margin: 0 10rem;
+    padding: 10px 2rem;
   }
   .blog__item {
     width: 20rem;
   }
-}
-@media screen and (max-width: 992px) {
   .banner__items {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    gap: 10px;
   }
-}
-@media screen and (max-width: 992px) {
-  .main__container {
-    margin: 9rem 10rem;
+  .banner__items--one .banner__item {
+    width: 100%;
   }
-}
-@media screen and (max-width: 992px) {
-  .card__items {
-    height: 100%;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-  }
-}
-@media screen and (max-width: 992px) {
   .banner__items--two {
     margin-top: 0;
   }
-}
-@media screen and (max-width: 992px) {
+  .banner__item {
+    width: 310px;
+  }
+  .main__container {
+    margin: 9rem 10rem;
+  }
+  .card__items {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
   .card__items--row {
     gap: 2rem;
   }
+  .card__item-info {
+    margin-top: 0;
+  }
 }
 @media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
   .feature__items {
+    display: grid;
     height: 32rem;
+    width: 540px;
+    margin: auto;
   }
   .main__container {
     padding-top: 35rem;
@@ -949,63 +957,117 @@ a:hover {
   .banner__items {
     grid-template-columns: 1fr;
   }
+  .banner__items--two {
+    grid-template-columns: 1fr;
+  }
+  .banner__item {
+    width: 540px;
+  }
   .card__items {
     grid-template-columns: repeat(2, 1fr);
   }
-  .banner__items--two {
-    grid-template-columns: 1fr;
+  .card__items--row {
+    gap: 3.5rem;
   }
   .card__item {
     width: 15rem;
     gap: 1rem;
   }
   .blog__item {
-    width: 30rem;
+    width: 540px;
   }
   .blog__items {
+    gap: 1rem;
     grid-template-columns: repeat(7, 1fr);
   }
   .footer .off {
     display: none;
   }
-}
-@media screen and (max-width: 576px) {
-  .nav-top {
-    display: flex;
-    flex-direction: column;
-    height: 8rem;
+  .card__section-title {
+    justify-content: center;
     align-items: center;
-    justify-content: center;
+    font-size: 2.3rem;
   }
-  .nav {
-    height: 8rem;
-  }
-  .nav-top__ship.mini-card {
-    width: 100%;
-  }
-  .nav-top__ship.mini-card {
-    justify-content: center;
-  }
-  .nav-top__ship.mini-card {
-    /* width: 100%; */
-    width: 60%;
-  }
-  .nav-top__ship-item.mini-card__item {
-    width: 100%;
+  .nav-top {
+    width: 540px;
+    margin: auto;
   }
   .hero-text__container.bg-trans {
-    margin: auto 15px;
+    margin: auto;
+    width: 540px;
   }
-  .hero-text__container.bg-trans {
-    width: 100%;
-  }
-  .feature__items {
-    margin: auto 15px;
+  #hero-text {
+    margin: 10%;
   }
   .main__container {
-    margin: 9rem 15px;
+    width: 540px;
+    margin: 9rem auto;
   }
+}
+@media screen and (max-width: 576px) {
+  .footer-bottom__info-block {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  .nav {
+    height: 134px;
+  }
+  .nav-top {
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  .banner__item {
+    width: 90vw;
+  }
+  .off--sm {
+    display: none;
+  }
+  /* Feuille de style intégrée #2 | http://127.0.0.1:5500/dist/index.html# */
   .blog__item {
-    width: 35rem;
+    width: 363px;
   }
+  .blog__items {
+    gap: 2rem;
+  }
+  .banner__item {
+    width: 363px;
+  }
+  .card__item {
+    width: 173px;
+  }
+  #hero-text {
+    width: 393px;
+  }
+  .hero {
+    height: 432px;
+  }
+  .hero-text__title .bg-trans {
+    font-size: 26px;
+    line-height: 26px;
+  }
+  .hero-text__info .bg-trans {
+    font-size: 14px;
+  }
+  .hero-text__container.bg-trans {
+    padding: 0 5%;
+  }
+}
+#hero-text {
+  margin: auto;
+}
+
+.feature__items {
+  width: 363px;
+}
+
+.main__container {
+  width: 363px;
+}
+
+.card__items {
+  gap: 10px;
+}
+
+.nav-top {
+  width: 363px;
 }/*# sourceMappingURL=style.css.map */
