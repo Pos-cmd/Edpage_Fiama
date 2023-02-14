@@ -1036,6 +1036,12 @@ a:hover {
   .card__item {
     width: 173px;
   }
+  .card__items {
+    gap: 10px;
+  }
+  .card__items--row {
+    gap: 10px;
+  }
   #hero-text {
     width: 393px;
   }
@@ -1060,9 +1066,6 @@ a:hover {
   }
   .main__container {
     width: 363px;
-  }
-  .card__items {
-    gap: 10px;
   }
   .nav-top {
     width: 363px;

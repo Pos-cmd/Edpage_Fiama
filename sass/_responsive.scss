@@ -280,8 +280,17 @@
     width: 363px;
   }
 
-  .card__item {
-    width: 173px;
+  .card {
+    &__item {
+      width: 173px;
+    }
+
+    &__items {
+      gap: 10px;
+      &--row {
+        gap: 10px;
+      }
+    }
   }
 
   #hero-text {
@@ -326,9 +335,6 @@
   }
 
   .card {
-    &__items {
-      gap: 10px;
-    }
   }
 
   .nav-top {
