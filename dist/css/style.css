@@ -1079,6 +1079,12 @@ a:hover {
     width: 363px;
   }
   .footer-bottom__container {
-    padding: 95px 2%;
+    padding: 95px 2% 0;
+  }
+  .copyright__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
   }
 }/*# sourceMappingURL=style.css.map */
