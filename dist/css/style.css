@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Poppins&display=swap");
 @keyframes slideUp {
   0% {
@@ -902,6 +901,8 @@ a:hover {
     margin: auto 10rem;
   }
   .feature__items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     margin: 0 10rem;
     padding: 10px 2rem;
   }
@@ -947,6 +948,7 @@ a:hover {
   }
   .feature__items {
     display: grid;
+    grid-template-columns: 1fr;
     height: 32rem;
     width: 540px;
     margin: auto;
@@ -1022,7 +1024,6 @@ a:hover {
   .off--sm {
     display: none;
   }
-  /* Feuille de style intégrée #2 | http://127.0.0.1:5500/dist/index.html# */
   .blog__item {
     width: 363px;
   }
@@ -1048,26 +1049,22 @@ a:hover {
   .hero-text__info .bg-trans {
     font-size: 14px;
   }
-  .hero-text__container.bg-trans {
+  .hero-text__container .bg-trans {
     padding: 0 5%;
   }
-}
-#hero-text {
-  margin: auto;
-}
-
-.feature__items {
-  width: 363px;
-}
-
-.main__container {
-  width: 363px;
-}
-
-.card__items {
-  gap: 10px;
-}
-
-.nav-top {
-  width: 363px;
+  #hero-text {
+    margin: auto;
+  }
+  .feature__items {
+    width: 363px;
+  }
+  .main__container {
+    width: 363px;
+  }
+  .card__items {
+    gap: 10px;
+  }
+  .nav-top {
+    width: 363px;
+  }
 }/*# sourceMappingURL=style.css.map */

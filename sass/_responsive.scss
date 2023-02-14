@@ -97,6 +97,8 @@
   }
 
   .feature__items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     margin: 0 10rem;
     padding: 10px 2rem;
   }
@@ -158,6 +160,7 @@
 
   .feature__items {
     display: grid;
+    grid-template-columns: 1fr;
     height: 32rem;
     width: 540px;
     margin: auto;
@@ -263,8 +266,6 @@
     display: none;
   }
 
-  /* Feuille de style intégrée #2 | http://127.0.0.1:5500/dist/index.html# */
-
   .blog {
     &__item {
       width: 363px;
@@ -305,8 +306,8 @@
       }
     }
 
-    &__container{
-        .bg-trans {
+    &__container {
+      .bg-trans {
         padding: 0 5%;
       }
     }
@@ -333,5 +334,4 @@
   .nav-top {
     width: 363px;
   }
-
-  
+}
