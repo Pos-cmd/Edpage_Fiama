@@ -885,7 +885,7 @@ a:hover {
   }
   .nav-top {
     height: 100%;
-    margin: auto 10rem;
+    margin: auto 10%;
   }
   .hero-text__title {
     font-size: 36px;
@@ -906,12 +906,12 @@ a:hover {
     margin: 15px 0;
   }
   .hero-text__container {
-    margin: auto 10rem;
+    margin: auto 10%;
   }
   .feature__items {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    margin: 0 10rem;
+    margin: 0 10%;
     padding: 10px 2rem;
   }
   .blog__item {
@@ -934,7 +934,7 @@ a:hover {
     width: 310px;
   }
   .main__container {
-    margin: 9rem 10rem;
+    margin: 9rem 10%;
   }
   .card__items {
     height: 100%;
