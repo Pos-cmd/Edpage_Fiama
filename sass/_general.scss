@@ -747,7 +747,7 @@ a {
 
   &__item {
     background-color: transparent;
-    color: #666666;
+    color: #B5B5B5;
     transition: 0.4s;
     &--title {
       background: transparent;
@@ -770,7 +770,7 @@ a {
   }
 
   &__item-link {
-    color: #666666;
+    color: #B5B5B5;
     transition: 0.4s;
 
     img {
@@ -785,7 +785,7 @@ a {
     }
 
     &--dead {
-      color: #666666;
+      color: #B5B5B5;
       cursor: default;
 
       &:hover {
@@ -819,7 +819,7 @@ a {
 
     .text {
       background-color: transparent;
-      color: $text-third-color;
+      color: #B5B5B5;
       font-size: 13px;
     }
 
@@ -832,6 +832,7 @@ a {
 .res {
   &__link {
     padding-right: 1rem;
+    color: #B5B5B5;
     i {
       background: transparent;
     }

@@ -766,7 +766,7 @@ a:hover {
 }
 .footer-bottom__item {
   background-color: transparent;
-  color: #666666;
+  color: #B5B5B5;
   transition: 0.4s;
 }
 .footer-bottom__item--title {
@@ -784,7 +784,7 @@ a:hover {
   opacity: 1;
 }
 .footer-bottom__item-link {
-  color: #666666;
+  color: #B5B5B5;
   transition: 0.4s;
 }
 .footer-bottom__item-link img {
@@ -798,7 +798,7 @@ a:hover {
   transition: 0.8s ease;
 }
 .footer-bottom__item-link--dead {
-  color: #666666;
+  color: #B5B5B5;
   cursor: default;
 }
 .footer-bottom__item-link--dead:hover {
@@ -827,7 +827,7 @@ a:hover {
 }
 .copyright__text .text {
   background-color: transparent;
-  color: #666666;
+  color: #B5B5B5;
   font-size: 13px;
 }
 .copyright__text .res {
@@ -836,6 +836,7 @@ a:hover {
 
 .res__link {
   padding-right: 1rem;
+  color: #B5B5B5;
 }
 .res__link i {
   background: transparent;
@@ -897,7 +898,7 @@ a:hover {
     z-index: 9;
     position: absolute;
     background: #fff;
-    height: 515px;
+    height: 600px;
     top: 0;
     left: 0;
     transform: translateX(-100%);
