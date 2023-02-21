@@ -889,6 +889,9 @@ a:hover {
   }
 }
 @media screen and (max-width: 992px) {
+  .nav-bottom {
+    display: none;
+  }
   .nav-aside {
     display: flex;
     z-index: 9;

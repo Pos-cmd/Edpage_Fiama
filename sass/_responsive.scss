@@ -61,6 +61,9 @@
 }
 
 @include media-md {
+  .nav-bottom{
+    display: none;
+  }
   .nav-aside {
     display: flex;
     z-index: 9;
