@@ -230,7 +230,7 @@
     // FIX: Permet la visualisation de la sidebar
     &:has(input:checked) ~ .nav-aside {
       transform: translateX(0);
-      box-shadow: 400px 0px 14px 6px rgba(0, 0, 0, 0.31);
+      box-shadow: 400px -2px 200px 6px rgba(0,0,0,0.35);
     }
   }
 
