@@ -1041,6 +1041,10 @@ a:hover {
     width: var(--x-width);
     translate: 0 calc(var(--bar-height) / 2);
   }
+  .burger-menu:has(input:checked) ~ .nav-aside {
+    transform: translateX(0);
+    box-shadow: 400px 0px 14px 6px rgba(0, 0, 0, 0.31);
+  }
   .hero-text__title {
     font-size: 36px;
     line-height: 36px;
