@@ -1,5 +1,6 @@
 {
-    "editor.tabCompletion": "on",
-    "diffEditor.codeLens": true,
-    "compile-hero.disable-compile-files-on-did-save-code": false
+  "editor.tabCompletion": "on",
+  "diffEditor.codeLens": true,
+  "compile-hero.disable-compile-files-on-did-save-code": false,
+  "liveServer.settings.port": 5501
 }

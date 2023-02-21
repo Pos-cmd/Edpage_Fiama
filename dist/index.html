@@ -17,42 +17,89 @@
   <body>
     <header class="header">
       <nav class="nav">
-        <div class="nav-top">
+        <div class="nav-top"  itemscope itemtype="https://schema.org/Organization">
           <div class="nav-top__logo">
             <a href="#" class="nav__logo-link"
               ><img src="./assets/img/logo.png" alt="logo"
             /></a>
           </div>
           <div class="contact-search">
-            <ul class="contact-search__contact mini-card">
+            <ul class="contact-search__contact mini-card"  itemprop="contactPoint" itemscope itemtype="https://schema.org/ContactPoint">
               <li class="contact-search__contact-item mini-card__item">
                 <i class="fas fa-phone"></i>
               </li>
               <li class="contact-search__contact-item mini-card__item">
                 PHONE <br />
-                <a href="+0123-456-789">+0123-456-789</a>
+                <a href="+0123-456-789"  itemprop="telephone">+0123-456-789</a>
               </li>
             </ul>
             <div class="contact-search__search">
-              <div class="contact-search">
+              <div class="contact-search" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction">
                 <input
                   class="input-search"
                   type="search"
                   placeholder="Search here..."
+                  itemprop="query-input"
                 />
-                <button class="btn btn__search">
+                <button class="btn btn__search"  itemprop="query-action">
                   <i class="fas fa-magnifying-glass"></i>
                 </button>
               </div>
             </div>
           </div>
-          <ul class="nav-top__ship mini-card">
-            <li class="nav-top__ship-item mini-card__item">
+          <ul class="nav-top__ship mini-card"  itemprop="potentialAction" itemscope itemtype="https://schema.org/BuyAction">
+            <li class="nav-top__ship-item mini-card__item" itemprop="result" itemscope itemtype="https://schema.org/PriceSpecification">
               <i class="fas fa-bag-shopping"></i>
             </li>
             <li class="nav-top__ship-item mini-card__item">
-              YOUR CARD <br /><span>$89.25</span>
+              YOUR CARD <br /><span itemprop="price">$89.25</span>
             </li>
+            <div class="nav-top__burger">
+              <label for="burger" class="burger-menu">
+                <input type="checkbox" name="burger" ">
+              </label>
+              <div class="nav-aside">
+                <ul class="nav-aside__items">
+                  <li class="nav-aside__item--logo" >
+                    <a href="#" class="nav__logo-link"
+                    ><img itemprop="logo" src="./assets/img/logo.png" alt="logo"
+                  /></a>
+                    <label for="" class="nav-aside__close">
+                      <input type="checkbox" >
+                    </label>
+                  </li>
+                  <hr>
+                  <li class="nav-aside__item--search">
+                    <input
+                        class="input-search"
+                        type="search"
+                        placeholder="Search here..."
+                      />
+                      <button class="btn btn__search">
+                        <i class="fas fa-magnifying-glass"></i>
+                      </button>
+                  </li>
+                  <li class="nav-aside__item">
+                    <a href="#">HOME</a>
+                  </li>
+                  <li class="nav-aside__item">
+                    <a href="#">PAGES</a>
+                  </li>
+                  <li class="nav-aside__item">
+                    <a href="#">SHOP</a>
+                  </li>
+                  <li class="nav-aside__item">
+                    <a href="#">PORTFOLIO</a>
+                  </li>
+                  <li class="nav-aside__item">
+                    <a href="#">NEWS</a>
+                  </li>
+                  <li class="nav-aside__item">
+                    <a href="#">CONTACT</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </ul>
         </div>
         <hr />
@@ -356,30 +403,30 @@
 
     <section class="main">
       <div class="main__container">
-        <div class="banner">
+        <div class="banner" itemscope itemtype="http://schema.org/ImageGallery">
           <ul class="banner__items">
-            <li class="banner__item">
+            <li class="banner__item" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
               <a href="#" class="banner__item-link"></a
               ><img src="./assets/img/banner-25.jpg" alt="" />
             </li>
-            <li class="banner__item">
+            <li class="banner__item" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
               <a href="#" class="banner__item-link"></a
               ><img src="./assets/img/banner-30.jpg" alt="" />
             </li>
-            <li class="banner__item">
+            <li class="banner__item" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
               <a href="#" class="banner__item-link"></a
               ><img src="./assets/img/banner-40.jpg" alt="" />
             </li>
           </ul>
         </div>
-        <div class="card">
+        <div class="card" itemscope itemtype="http://schema.org/Product">
           <h2 class="card__section-title">
             new arrival items
 
             <hr />
           </h2>
           <ul class="card__items">
-            <li class="card__item">
+            <li class="card__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
               <div class="card__item-img">
                 <div class="card__img-badge">
                   <span>10</span>
@@ -401,14 +448,14 @@
                 </ul>
               </div>
               <div class="card__item-info">
-                <div class="card__item-title">PINK FLOWER TREE</div>
+                <div class="card__item-title" itemprop="name">PINK FLOWER TREE</div>
                 <div class="card__item-desc">
-                  <span class="price">$18.00</span>
+                  <span class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">$18.00</span>
                   <span class="past-price">$21.00</span>
                 </div>
               </div>
             </li>
-            <li class="card__item">
+            <li class="card__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
               <div class="card__item-img">
                 <div class="hot card__img-badge">
                   <span >HOT</span>
@@ -429,13 +476,13 @@
                 </ul>
               </div>
               <div class="card__item-info">
-                <div class="card__item-title">PREMIUM JOYFUL</div>
+                <div class="card__item-title" itemprop="name">PREMIUM JOYFUL</div>
                 <div class="card__item-desc">
-                  <span class="price">$18.00</span>
+                  <span class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">$18.00</span>
                 </div>
               </div>
             </li>
-            <li class="card__item">
+            <li class="card__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
               <div class="card__item-img">
                 <div class="card__img-badge">
                   <span>12%</span>
@@ -456,14 +503,14 @@
                 </ul>
               </div>
               <div class="card__item-info">
-                <div class="card__item-title">THE WHITE ROSE</div>
+                <div class="card__item-title" itemprop="name">THE WHITE ROSE</div>
                 <div class="card__item-desc">
-                  <span class="price">$16.00</span>
+                  <span class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">$16.00</span>
                   <span class="past-price">$19.00</span>
                 </div>
               </div>
             </li>
-            <li class="card__item">
+            <li class="card__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
               <div class="card__item-img">
                 <div class="hot card__img-badge">
                   <span >HOT</span>
@@ -484,13 +531,13 @@
                 </ul>
               </div>
               <div class="card__item-info">
-                <div class="card__item-title">RED ROSE BOUQUET</div>
+                <div class="card__item-title" itemprop="name">RED ROSE BOUQUET</div>
                 <div class="card__item-desc">
-                  <span class="price">$20.00</span>
+                  <span class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">$20.00</span>
                 </div>
               </div>
             </li>
-            <li class="card__item">
+            <li class="card__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
               <div class="card__item-img">
                 <div class="hot card__img-badge">
                   <span >10</span>
@@ -511,13 +558,13 @@
                 </ul>
               </div>
               <div class="card__item-info">
-                <div class="card__item-title">HEART'S DESIRE</div>
+                <div class="card__item-title" itemprop="name">HEART'S DESIRE</div>
                 <div class="card__item-desc">
-                  <span class="price">$15.00</span>
+                  <span class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">$15.00</span>
                 </div>
               </div>
             </li>
-            <li class="card__item">
+            <li class="card__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
               <div class="card__item-img">
                 <div class="card__img-badge">
                   <span>15%</span>
@@ -538,13 +585,13 @@
                 </ul>
               </div>
               <div class="card__item-info">
-                <div class="card__item-title">ASSORTED ROSES</div>
+                <div class="card__item-title" itemprop="name">ASSORTED ROSES</div>
                 <div class="card__item-desc">
-                  <span class="price">$17.00</span>
+                  <span class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">$17.00</span>
                 </div>
               </div>
             </li>
-            <li class="card__item">
+            <li class="card__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
               <div class="card__item-img">
                 <div class="hot card__img-badge">
                   <span  >HOT</span>
@@ -565,13 +612,13 @@
                 </ul>
               </div>
               <div class="card__item-info">
-                <div class="card__item-title">ROSES SURPRISE</div>
+                <div class="card__item-title" itemprop="name">ROSES SURPRISE</div>
                 <div class="card__item-desc">
-                  <span class="price">$12.00</span>
+                  <span class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">$12.00</span>
                 </div>
               </div>
             </li>
-            <li class="card__item">
+            <li class="card__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
               <div class="card__item-img">
                 <div class="hot card__img-badge">
                   <span  >12%</span>
@@ -592,33 +639,33 @@
                 </ul>
               </div>
               <div class="card__item-info">
-                <div class="card__item-title">TROPICAL PEACE LILY</div>
+                <div class="card__item-title" itemprop="name">TROPICAL PEACE LILY</div>
                 <div class="card__item-desc">
-                  <span class="price">$14.00</span>
+                  <span class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">$14.00</span>
                   <span class="past-price">$25.00</span>
                 </div>
               </div>
             </li>
           </ul>
         </div>
-        <div class="banner">
+        <div class="banner" itemscope itemtype="http://schema.org/ImageGallery">
           <ul class="banner__items--two">
-            <li class="banner__item">
+            <li class="banner__item" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
               <a href="#" class="banner__item-link"></a><img src="./assets/img/bellflower-12$.jpg" alt="" />
             </li>
-            <li class="banner__item">
+            <li class="banner__item" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
               <a href="#" class="banner__item-link"></a><img src="./assets/img/tulip-12$.jpg" alt="" />
             </li>
           </ul>
         </div>
-        <div class="card">
+        <div class="card" itemscope itemtype="http://schema.org/Product">
           <h2 class="card__section-title">
             top products
 
             <hr />
           </h2>
           <ul class="card__items--row">
-            <li class="card__item">
+            <li class="card__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
               <div class="card__item-img">
                 <div class="card__img-badge">
                   <span>10</span>
@@ -639,14 +686,14 @@
                 </ul>
               </div>
               <div class="card__item-info">
-                <div class="card__item-title">PINK FLOWER TREE</div>
+                <div class="card__item-title" itemprop="name">PINK FLOWER TREE</div>
                 <div class="card__item-desc">
-                  <span class="price">$18.00</span>
+                  <span class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">$18.00</span>
                   <span class="past-price">$21.00</span>
                 </div>
               </div>
             </li>
-            <li class="card__item">
+            <li class="card__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
               <div class="card__item-img">
                 <div class="card__img-badge">
                   <span>10</span>
@@ -667,13 +714,13 @@
                 </ul>
               </div>
               <div class="card__item-info">
-                <div class="card__item-title">PREMIUM JOYFUL</div>
+                <div class="card__item-title" itemprop="name">PREMIUM JOYFUL</div>
                 <div class="card__item-desc">
-                  <span class="price">$18.00</span>
+                  <span class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">$18.00</span>
                 </div>
               </div>
             </li>
-            <li class="card__item">
+            <li class="card__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
               <div class="card__item-img">
                 <div class="card__img-badge">
                   <span>10</span>
@@ -694,14 +741,14 @@
                 </ul>
               </div>
               <div class="card__item-info">
-                <div class="card__item-title">THE WHITE ROSE</div>
+                <div class="card__item-title" itemprop="name">THE WHITE ROSE</div>
                 <div class="card__item-desc">
-                  <span class="price">$16.00</span>
+                  <span class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">$16.00</span>
                   <span class="past-price">$19.00</span>
                 </div>
               </div>
             </li>
-            <li class="card__item">
+            <li class="card__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
               <div class="card__item-img">
                 <div class="card__img-badge">
                   <span>10</span>
@@ -722,13 +769,13 @@
                 </ul>
               </div>
               <div class="card__item-info">
-                <div class="card__item-title">RED ROSE BOUQUET</div>
+                <div class="card__item-title" itemprop="name">RED ROSE BOUQUET</div>
                 <div class="card__item-desc">
-                  <span class="price">$20.00</span>
+                  <span class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">$20.00</span>
                 </div>
               </div>
             </li>
-            <li class="card__item">
+            <li class="card__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
               <div class="card__item-img">
                 <div class="card__img-badge">
                   <span>10</span>
@@ -749,13 +796,13 @@
                 </ul>
               </div>
               <div class="card__item-info">
-                <div class="card__item-title">HEART'S DESIRE</div>
+                <div class="card__item-title" itemprop="name">HEART'S DESIRE</div>
                 <div class="card__item-desc">
-                  <span class="price">$15.00</span>
+                  <span class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">$15.00</span>
                 </div>
               </div>
             </li>
-            <li class="card__item">
+            <li class="card__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
               <div class="card__item-img">
                 <div class="card__img-badge">
                   <span>10</span>
@@ -776,13 +823,13 @@
                 </ul>
               </div>
               <div class="card__item-info">
-                <div class="card__item-title">ASSORTED ROSES</div>
+                <div class="card__item-title" itemprop="name">ASSORTED ROSES</div>
                 <div class="card__item-desc">
-                  <span class="price">$17.00</span>
+                  <span class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">$17.00</span>
                 </div>
               </div>
             </li>
-            <li class="card__item">
+            <li class="card__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
               <div class="card__item-img">
                 <div class="card__img-badge">
                   <span>10</span>
@@ -803,13 +850,13 @@
                 </ul>
               </div>
               <div class="card__item-info">
-                <div class="card__item-title">ROSES SURPRISE</div>
+                <div class="card__item-title" itemprop="name">ROSES SURPRISE</div>
                 <div class="card__item-desc">
-                  <span class="price">$12.00</span>
+                  <span class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">$12.00</span>
                 </div>
               </div>
             </li>
-            <li class="card__item">
+            <li class="card__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
               <div class="card__item-img">
                 <div class="card__img-badge">
                   <span>10</span>
@@ -830,140 +877,110 @@
                 </ul>
               </div>
               <div class="card__item-info">
-                <div class="card__item-title">TROPICAL PEACE LILY</div>
+                <div class="card__item-title" itemprop="name">TROPICAL PEACE LILY</div>
                 <div class="card__item-desc">
-                  <span class="price">$14.00</span>
+                  <span class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">$14.00</span>
                   <span class="past-price">$25.00</span>
                 </div>
               </div>
             </li>
           </ul>
         </div>
-        <div class="banner">
+        <div class="banner" itemscope itemtype="http://schema.org/ImageGallery">
           <ul class="banner__items--one">
-            <li class="banner__item">
+            <li class="banner__item" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
               <a href="#" class="banner__item-link"></a><img src="./assets/img/best-offer-12$.jpg" alt="" />
             </li>
           </ul>
         </div>
-        <div class="blog">
+        <div class="blog" itemscope itemtype="http://schema.org/Blog">
           <h2 class="blog__section-title">
             latest news
 
             <hr />
           </h2>
-
-          <!-- <input type="radio" name="blog" id="blog-1">
-          <input type="radio" name="blog" id="blog-2">
-          <input type="radio" name="blog" id="blog-3">
-
-          <div class="blog__slider-btn">
-            <label for="blog-3" class="blog__slider-pre">
-              <i class="fas fa-angle-left"></i>
-            </label>
-            <label for="blog-2" class="blog__slider-nxt">
-              <i class="fas fa-angle-right"></i>
-            </label>
-          </div>
-          <div class="blog__slider-btn">
-            <label for="blog-1" class="blog__slider-pre">
-              <i class="fas fa-angle-left"></i>
-            </label>
-            <label for="blog-3" class="blog__slider-nxt">
-              <i class="fas fa-angle-right"></i>
-            </label>
-          </div>
-          <div class="blog__slider-btn">
-            <label for="blog-2" class="blog__slider-pre">
-              <i class="fas fa-angle-left"></i>
-            </label>
-            <label for="blog-1" class="blog__slider-nxt">
-              <i class="fas fa-angle-right"></i>
-            </label>
-          </div> -->
-          
           <ul class="blog__items">
-            <li class="blog__item">
+            <li class="blog__item" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
               <div class="blog__item-img">
                 <a class="blog__img-link" href="#"><img src="./assets/img/blog-1.jpg" alt=""></a>
               </div>
               <div class="blog__item-info">
                 <div class="blog__info-meta">
-                  <div class="date">Nov 18, 2020 <span class="msg"><i class="fa-regular fa-comment-dots"></i>2</span></div>
+                  <div class="date" itemprop="datePublished">Nov 18, 2020 <span class="msg"><i class="fa-regular fa-comment-dots"></i>2</span></div>
                 </div>
-                <div class="blog__info-desc"><a href="#" class="blog__info-link">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae</a></div>
+                <div class="blog__info-desc"><a href="#" class="blog__info-link" itemprop="headline">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae</a></div>
                 <hr>
               </div>
             </li>
-            <li class="blog__item">
+            <li class="blog__item" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
               <div class="blog__item-img">
                 <a class="blog__img-link" href="#"><img src="./assets/img/blog-2.jpg" alt=""></a>
               </div>
               <div class="blog__item-info">
                 <div class="blog__info-meta">
-                  <div class="date">Nov 18, 2020 <span class="msg"><i class="fa-regular fa-comment-dots"></i>2</span></div>
+                  <div class="date" itemprop="datePublished">Nov 18, 2020 <span class="msg"><i class="fa-regular fa-comment-dots"></i>2</span></div>
                 </div>
-                <div class="blog__info-desc"><a href="#" class="blog__info-link">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae</a></div>
+                <div class="blog__info-desc"><a href="#" class="blog__info-link" itemprop="headline">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae</a></div>
                 <hr>
               </div>
             </li>
-            <li class="blog__item">
+            <li class="blog__item" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
               <div class="blog__item-img">
                 <a class="blog__img-link" href="#"><img src="./assets/img/blog-3.jpg" alt=""></a>
               </div>
               <div class="blog__item-info">
                 <div class="blog__info-meta">
-                  <div class="date">Nov 18, 2020 <span class="msg"><i class="fa-regular fa-comment-dots"></i>2</span></div>
+                  <div class="date" itemprop="datePublished">Nov 18, 2020 <span class="msg"><i class="fa-regular fa-comment-dots"></i>2</span></div>
                 </div>
-                <div class="blog__info-desc"><a href="#" class="blog__info-link">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae</a></div>
+                <div class="blog__info-desc"><a href="#" class="blog__info-link" itemprop="headline">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae</a></div>
                 <hr>
               </div>
             </li>
-            <li class="blog__item">
+            <li class="blog__item" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
               <div class="blog__item-img">
                 <a class="blog__img-link" href="#"><img src="./assets/img/blog-4.jpg" alt=""></a>
               </div>
               <div class="blog__item-info">
                 <div class="blog__info-meta">
-                  <div class="date">Nov 18, 2020 <span class="msg"><i class="fa-regular fa-comment-dots"></i>2</span></div>
+                  <div class="date" itemprop="datePublished">Nov 18, 2020 <span class="msg"><i class="fa-regular fa-comment-dots"></i>2</span></div>
                 </div>
-                <div class="blog__info-desc"><a href="#" class="blog__info-link">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae</a></div>
+                <div class="blog__info-desc"><a href="#" class="blog__info-link" itemprop="headline">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae</a></div>
                 <hr>
               </div>
             </li>
-            <li class="blog__item">
+            <li class="blog__item" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
               <div class="blog__item-img">
                 <a class="blog__img-link" href="#"><img src="./assets/img/blog-5.jpg" alt=""></a>
               </div>
               <div class="blog__item-info">
                 <div class="blog__info-meta">
-                  <div class="date">Nov 18, 2020 <span class="msg"><i class="fa-regular fa-comment-dots"></i>2</span></div>
+                  <div class="date" itemprop="datePublished">Nov 18, 2020 <span class="msg"><i class="fa-regular fa-comment-dots"></i>2</span></div>
                 </div>
-                <div class="blog__info-desc"><a href="#" class="blog__info-link">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae</a></div>
+                <div class="blog__info-desc"><a href="#" class="blog__info-link" itemprop="headline">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae</a></div>
                 <hr>
               </div>
             </li>
-            <li class="blog__item">
+            <li class="blog__item" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
               <div class="blog__item-img">
                 <a class="blog__img-link" href="#"><img src="./assets/img/blog-1.jpg" alt=""></a>
               </div>
               <div class="blog__item-info">
                 <div class="blog__info-meta">
-                  <div class="date">Nov 18, 2020 <span class="msg"><i class="fa-regular fa-comment-dots"></i>2</span></div>
+                  <div class="date" itemprop="datePublished">Nov 18, 2020 <span class="msg"><i class="fa-regular fa-comment-dots"></i>2</span></div>
                 </div>
-                <div class="blog__info-desc"><a href="#" class="blog__info-link">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae</a></div>
+                <div class="blog__info-desc"><a href="#" class="blog__info-link" itemprop="headline">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae</a></div>
                 <hr>
               </div>
             </li>
-            <li class="blog__item">
+            <li class="blog__item" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
               <div class="blog__item-img">
                 <a class="blog__img-link" href="#"><img src="./assets/img/blog-2.jpg" alt=""></a>
               </div>
               <div class="blog__item-info">
                 <div class="blog__info-meta">
-                  <div class="date">Nov 18, 2020 <span class="msg"><i class="fa-regular fa-comment-dots"></i>2</span></div>
+                  <div class="date" itemprop="datePublished">Nov 18, 2020 <span class="msg"><i class="fa-regular fa-comment-dots"></i>2</span></div>
                 </div>
-                <div class="blog__info-desc"><a href="#" class="blog__info-link">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae</a></div>
+                <div class="blog__info-desc"><a href="#" class="blog__info-link" itemprop="headline">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae</a></div>
                 <hr>
               </div>
             </li>
@@ -977,12 +994,12 @@
     <div class="footer-top">
       <div class="footer-top__container">
         <ul class="footer-top__items">
-          <li class="footer-top__item off"><a href="#" class="footer-top__item-link"><img src="./assets/img/footer1.png" alt="" class="footer-top__link-img"></a></li>
+          <li class="footer-top__item "><a href="#" class="footer-top__item-link"><img src="./assets/img/footer1.png" alt="" class="footer-top__link-img"></a></li>
           <li class="footer-top__item"><a href="#" class="footer-top__item-link"><img src="./assets/img/footer2.png" alt="" class="footer-top__link-img"></a></li>
-          <li class="footer-top__item off--sm"><a href="#" class="footer-top__item-link"><img src="./assets/img/footer3.png" alt="" class="footer-top__link-img"></a></li>
-          <li class="footer-top__item off"><a href="#" class="footer-top__item-link"><img src="./assets/img/footer4.png" alt="" class="footer-top__link-img"></a></li>
-          <li class="footer-top__item"><a href="#" class="footer-top__item-link"><img src="./assets/img/footer5.png" alt="" class="footer-top__link-img"></a></li>
-          <li class="footer-top__item off"><a href="#" class="footer-top__item-link"><img src="./assets/img/footer1.png" alt="" class="footer-top__link-img"></a></li>
+          <li class="footer-top__item off"><a href="#" class="footer-top__item-link"><img src="./assets/img/footer3.png" alt="" class="footer-top__link-img"></a></li>
+          <li class="footer-top__item off--md"><a href="#" class="footer-top__item-link"><img src="./assets/img/footer5.png" alt="" class="footer-top__link-img"></a></li>
+          <li class="footer-top__item off--mb"><a href="#" class="footer-top__item-link"><img src="./assets/img/footer4.png" alt="" class="footer-top__link-img"></a></li>
+          <li class="footer-top__item off--sm"><a href="#" class="footer-top__item-link"><img src="./assets/img/footer1.png" alt="" class="footer-top__link-img"></a></li>
         </ul>
       </div>
     </div>
@@ -1022,27 +1039,27 @@
             <li class="footer-bottom__item"><a href="#" class="footer-bottom__item-link"><span>//</span>Online Stores</a></a></li>
             <li class="footer-bottom__item"><a href="#" class="footer-bottom__item-link"><span>//</span>Terms and Conditions</a></a></li>
           </ul>
-          <ul class="footer-bottom__items">
+          <ul class="footer-bottom__items" itemscope itemtype="https://schema.org/LocalBusiness">
             <li class="footer-bottom__item--title"><a href="#" class="footer-bottom__item-link">About Our Shop</a></li>
-            <li class="footer-bottom__item"><a href="#" class="footer-bottom__item-link--dead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo incididunt ut labore et dolore</a></li>
-            <li class="footer-bottom__item"><a href="#" class="footer-bottom__item-link--dead">
+            <li class="footer-bottom__item" itemprop="description"><a href="#" class="footer-bottom__item-link--dead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo incididunt ut labore et dolore</a></li>
+            <li class="footer-bottom__item" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress"><a href="#" class="footer-bottom__item-link--dead">
 
-              <i class="fa-solid fa-location-dot"></i> Brooklyn, New York, United States
+              <i class="fa-solid fa-location-dot"></i> <span itemprop="addressLocality">Brooklyn</span>, <span itemprop="addressRegion">New York</span>, <span itemprop="addressCountry">United States</span>
               </a></li>
-            <li class="footer-bottom__item"><a href="#" class="footer-bottom__item-link">+0123-456789</a></li>
-            <li class="footer-bottom__item"><a href="#" class="footer-bottom__item-link"><i class="fa-regular fa-envelope"></i>example@example.com</a></li>
+            <li class="footer-bottom__item"  itemprop="telephone"><a href="#" class="footer-bottom__item-link">+0123-456789</a></li>
+            <li class="footer-bottom__item"  itemprop="email"><a href="#" class="footer-bottom__item-link"><i class="fa-regular fa-envelope"></i>example@example.com</a></li>
             <li class="footer-bottom__item"><a href="#" class="footer-bottom__item-link"><img src="./assets/img/payment.png" alt="payement"></a></li>
           </ul>
         </div>
-        <div class="copyright">
+        <div class="copyright" itemscope itemtype="https://schema.org/Organization">
           <hr>
           <div class="copyright__text">
             <div class="text">© 2023 - Just For You</div>
-            <div class="res">
-              <a href="#" class="res__link"><i class="fa-brands fa-facebook-f"></i></a>
-              <a href="#" class="res__link"><i class="fa-brands fa-twitter"></i></a>
-              <a href="#" class="res__link"><i class="fa-brands fa-pinterest-p"></i></a>
-              <a href="#" class="res__link"><i class="fa-brands fa-instagram"></i></a>
+            <div class="res" itemprop="sameAs" itemscope itemtype="https://schema.org/SocialMediaPosting">
+              <a href="#" class="res__link" itemprop="url"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#" class="res__link" itemprop="url"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#" class="res__link" itemprop="url"><i class="fa-brands fa-pinterest-p"></i></a>
+              <a href="#" class="res__link" itemprop="url"><i class="fa-brands fa-instagram"></i></a>
             </div>
           </div>
         </div>

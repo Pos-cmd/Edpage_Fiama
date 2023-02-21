@@ -54,11 +54,113 @@
       gap: 2rem;
     }
   }
+
+  .footer .off {
+    display: none;
+  }
 }
 
 @include media-md {
-  .nav-bottom {
-    display: none;
+  .nav-aside {
+    display: flex;
+    z-index: 9;
+    position: absolute;
+    background: #fff;
+    height: 515px;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    transition: transform 0.4s ease-in;
+
+    &:has(input:checked){
+      transform: translateX(-100%);
+    }
+
+    &__items {
+      display: flex;
+      flex-direction: column;
+      width: 400px;
+      height: 95%;
+      align-items: start;
+      margin: 0;
+      padding: 2.4rem;
+      justify-content: space-between;
+    }
+
+    &__item--logo {
+      width: 100%;
+      border-bottom: 1px solid #cbd0d5;
+      padding-bottom: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__close {
+      --bar-width: 2rem;
+      --bar-height: 3.5px;
+      --burger-gap: 3px;
+      --burger-height: calc(var(--bar-height) * 3 + var(--burger-gap) * 2);
+      --x-width: calc(var(--burger-height) * 1.41421356237);
+
+      display: flex;
+      flex-direction: column;
+      width: max-content;
+      gap: var(--burger-gap);
+      z-index: 2;
+      padding-inline-start: 1rem;
+      cursor: pointer;
+
+      input {
+        appearance: none;
+        opacity: 1;
+        width: 1px;
+      height: var(--bar-height);
+      // background-color: #000;
+
+      }
+
+      &::before,
+      &::after {
+        cursor: pointer;
+      content: "";
+      width: var(--bar-width);
+      height: var(--bar-height);
+      background-color: #000;
+      border-radius: 9999px;
+      transform-origin: left center;
+      }
+
+      &::before{
+        transform: rotate(45deg);
+      width: var(--x-width);
+      translate: 0 calc(var(--bar-height) / -2);
+      }
+
+      &::after{
+        transform: rotate(-45deg);
+      width: var(--x-width);
+      translate: 0 calc(var(--bar-height) / 2);
+      }
+    }
+
+    .input-search {
+      border: none;
+      background: aliceblue;
+      width: 80%;
+      margin: auto;
+      height: 3rem;
+      padding-inline-start: 1rem;
+    }
+    .nav-aside__item--search {
+      width: 300px;
+      display: flex;
+    }
+    .btn.btn__search {
+      border: none;
+      transform: translateX(-100%);
+      font-size: 1rem;
+    }
   }
 
   .nav {
@@ -68,6 +170,64 @@
   .nav-top {
     height: 100%;
     margin: auto 10%;
+  }
+
+  .burger-menu {
+    --bar-width: 2rem;
+    --bar-height: 3px;
+    --burger-gap: 5px;
+    --burger-height: calc(var(--bar-height) * 3 + var(--burger-gap) * 2);
+    --x-width: calc(var(--burger-height) * 1.41421356237);
+
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    gap: var(--burger-gap);
+    z-index: 2;
+    padding-inline-start: 1rem;
+    cursor: pointer;
+
+    input {
+      appearance: none;
+      padding: 0;
+      margin: 0;
+      outline: none;
+    }
+
+    input:checked {
+      opacity: 0;
+      width: 1px;
+    }
+
+    &::before,
+    &::after,
+    input {
+      cursor: pointer;
+      content: "";
+      width: var(--bar-width);
+      height: var(--bar-height);
+      background-color: #000;
+      border-radius: 9999px;
+      transform-origin: left center;
+      transition: width 0.2s ease-in, opacity 0.2s ease-out, transform 0.4s ease;
+    }
+
+    &:has(input:checked)::before {
+      transform: rotate(45deg);
+      width: var(--x-width);
+      translate: 0 calc(var(--bar-height) / -2);
+    }
+
+    &:has(input:checked)::after {
+      transform: rotate(-45deg);
+      width: var(--x-width);
+      translate: 0 calc(var(--bar-height) / 2);
+    }
+
+    &:has(input:checked) ~ .nav-aside {
+      transform: translateX(0);
+      box-shadow: 400px 0px 14px 6px rgba(0, 0, 0, 0.31);
+    }
   }
 
   .hero-text__title {
@@ -152,6 +312,10 @@
       margin-top: 0;
     }
   }
+
+  .footer .off--md {
+    display: none;
+  }
 }
 
 @include media-mb {
@@ -210,7 +374,7 @@
     }
   }
 
-  .footer .off {
+  .footer .off--mb {
     display: none;
   }
 
