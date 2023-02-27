@@ -3,7 +3,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: transparent;
+  // background-color: rgb(0 100 0 / 0.05);
+  // outline: 1px solid red;
   font-family: "Montserrat", "Sans-serif";
 }
 
@@ -11,9 +12,13 @@ ul li {
   list-style-type: none;
 }
 
+img{
+  max-width: 100%;
+}
+
 a {
   @include clearlink($text-second-color);
-  background-color: transparent;
+  // background-color: transparent;
   font-size: 14px;
   transition: 0.4s;
 
@@ -22,8 +27,15 @@ a {
   }
 }
 
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .nav {
-  height: 12rem;
+  width: 90%;
 
   hr {
     border: none;
@@ -35,7 +47,6 @@ a {
 .nav-top {
   height: 8rem;
   @include flex-el(space-between);
-  margin: auto 4.5rem;
 }
 
 .burger-menu {
@@ -50,10 +61,6 @@ a {
     font-size: 12px;
     color: $text-second-color;
     margin-right: 1rem;
-    i {
-      font-size: 20px;
-      margin-right: 10px;
-    }
 
     a {
       @include clearlink($text-primary-color);
@@ -74,8 +81,9 @@ a {
 
   .btn__search {
     margin: auto 0;
-    transform: translateX(-250%);
-    background-color: transparent;
+    position: absolute;
+    transform: translate(-250%, 50%);
+    // background-color: transparent;
     border: none;
     font-size: 20px;
     color: $text-third-color;
@@ -86,11 +94,10 @@ a {
   @include flex-el(space-evenly);
   font-size: 12px;
   color: $text-second-color;
-  margin-right: 1rem;
   line-height: 1.5rem;
   i {
     font-size: 20px;
-    margin-right: 20px;
+    padding-inline: 10px;
   }
 
   &:last-child {
@@ -109,12 +116,11 @@ a {
 .nav-bottom {
   height: 4rem;
   display: flex;
+  justify-content: center;
 
   &__items {
-    @include flex-el(space-evenly);
-    width: 100%;
-    height: 100%;
-    margin: auto 25%;
+    @include flex-el(space-between);
+    width: 50%;
   }
 
   &__item {
@@ -161,7 +167,7 @@ a {
       padding: 10px 4rem 10px 10px;
       margin-left: 25px;
       a {
-        background-color: transparent;
+        // background-color: transparent;
       }
     }
   }
@@ -185,7 +191,6 @@ a {
 }
 
 .hero {
-  margin: 0 auto;
   position: relative;
   width: 100%;
   height: 700px;
@@ -204,21 +209,21 @@ a {
 
 .hero-slider {
   &__checkbox {
-    background-color: transparent;
+    // background-color: transparent;
   }
 }
 
 .slide__img {
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 43.75rem;
   transition: 0.4s ease-out;
   opacity: 0;
   z-index: -1;
 
   img {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
     object-fit: cover;
   }
 
@@ -237,14 +242,14 @@ a {
   justify-content: space-between;
   position: absolute;
   top: 50%;
-  background: transparent;
-  padding: 0 1rem;
+  // // background: transparent;
+  padding-inline: 1rem;
   transition: 0.5s ease;
   z-index: 9;
 
   &:hover {
     opacity: 1;
-    padding: 0 3rem;
+    padding-inline: 3rem;
   }
 
   &__pre,
@@ -252,7 +257,7 @@ a {
     display: flex;
     width: 3rem;
     height: 3rem;
-    background-color: transparent;
+    // background-color: transparent;
     border: 1px solid $text-third-color;
     font-size: 2rem;
     color: $text-third-color;
@@ -267,25 +272,33 @@ a {
     }
 
     i {
-      background-color: transparent;
+      // background-color: transparent;
       margin: auto;
     }
   }
 }
 
 .hero-text {
-  height: 100%;
+  width: 100%;
   position: absolute;
   z-index: 2;
   display: flex;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  justify-content: center;
+  align-items: center;
 
   &__container {
-    margin: auto 72px;
-    width: 50%;
+    width: 90%;
+    &--text {
+      width: 50%;
+    }
   }
 
   &__title {
-    @include font-custom(72px, 700, $text-second-color, 72px);
+    @include font-custom(65px, 700, $text-second-color, 72px);
     opacity: 0;
     animation: slideUp 1s forwards;
   }
@@ -297,7 +310,7 @@ a {
   }
 
   &__description {
-    @include font-custom(16px, 300);
+    @include font-custom(14px, 300);
     line-height: 29px;
     font-family: Poppins, sans-serif;
     opacity: 0;
@@ -343,33 +356,28 @@ a {
 }
 
 .bg-trans {
-  background-color: transparent;
+  // background-color: transparent;
 }
 
 .feature {
-  position: absolute;
   display: flex;
-  width: 100%;
+  width: 90%;
   height: 8rem;
   transform: translateY(-50%);
   z-index: 3;
-  background-color: transparent;
+  // background-color: transparent;
 
   &__items {
     background-color: #fff;
-    margin: auto;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     border: 1px solid #d1dae0;
     height: 100%;
     width: 100%;
-    margin: 0 72px;
-    padding: 0 1rem;
   }
 
   &__item {
-    margin: auto;
     display: flex;
     align-items: center;
     line-height: 2rem;
@@ -380,8 +388,13 @@ a {
 
   &__icon {
     font-size: 2rem;
-    margin-right: 1rem;
+    margin-inline: 1rem;
     color: $text-third-color;
+  }
+
+  &__info {
+    display: grid;
+    gap: 0.5rem;
   }
 }
 
@@ -391,7 +404,8 @@ a {
   flex-direction: column;
 
   &__container {
-    margin: 9rem 72px;
+    margin-inline: auto;
+    width: 90%;
   }
 }
 
@@ -406,7 +420,7 @@ a {
 
     img {
       object-fit: cover;
-      width: 100%;
+      height: 100%;
       transition: transform 0.6s ease-out;
 
       &:hover {
@@ -418,10 +432,9 @@ a {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 1rem;
-      margin-top: 20rem;
       img {
         object-fit: cover;
-        width: 100%;
+        height: 100%;
         transition: transform 0.6s ease-out;
 
         &:hover {
@@ -434,7 +447,7 @@ a {
       display: grid;
       img {
         object-fit: cover;
-        width: 100%;
+        height: 100%;
         transition: transform 0.8s ease-out;
 
         &:hover {
@@ -451,7 +464,8 @@ a {
 
 .card {
   width: 100%;
-  margin: 5rem 0;
+  margin-block: 5rem ;
+  display: inline-block;
 
   &__section-title {
     display: flex;
@@ -472,25 +486,24 @@ a {
 
   &__items {
     width: 100%;
-    height: 700px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 2rem;
+    grid: auto-flow / repeat(4, 1fr);
 
-    &--row {
+    &.row {
       display: grid;
-      grid-template-columns: repeat(8, 1fr);
+      grid-template-columns: repeat(8, 25%);
       overflow-y: hidden;
-      gap: 4rem;
     }
   }
 
+  &__item-prop{
+    padding-inline: 1rem;
+    padding-bottom: 2rem;
+  }
+
   &__item {
-    width: 16rem;
     img {
       object-fit: cover;
-      width: 100%;
     }
 
     display: flex;
@@ -499,14 +512,19 @@ a {
   }
 
   &__item-img {
-    height: 16.5rem;
-    margin-bottom: 5rem;
+    // height: 16.5rem;
+    // margin-bottom: 5rem;
+    position: relative;
     &:hover {
       .card__img-panel {
         display: grid;
-        animation: imgPanelSlideUp 0.5s forwards;
+        // animation: imgPanelSlideUp 0.5s forwards;
       }
     }
+  }
+
+  &__img-link {
+    display: block;
   }
 
   &__img-panel {
@@ -515,7 +533,7 @@ a {
     gap: 1px;
     width: 100%;
     height: 3rem;
-    position: relative;
+    position: absolute;
     transform: translateY(-100%);
 
     li {
@@ -530,7 +548,7 @@ a {
     }
 
     i {
-      background-color: transparent;
+      // background-color: transparent;
       font-size: 1rem;
     }
 
@@ -541,7 +559,7 @@ a {
 
   &__text {
     display: block;
-    background: transparent;
+    // background: transparent;
   }
 
   .fa-solid.fa-basket-shopping.card__icon {
@@ -549,7 +567,15 @@ a {
   }
 
   &__item-info {
-    margin-top: 2rem;
+    // margin-top: 2rem;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 54px;
+    margin-top: 0.5rem;
   }
 
   &__item-desc {
@@ -573,8 +599,8 @@ a {
     width: 55px;
     border-radius: 0 5px 5px 0;
     height: 25px;
-    position: relative;
-    transform: translateY(50px);
+    position: absolute;
+    transform: translateY(50%);
     text-align: center;
     padding: 2px 0;
     font-weight: bold;
@@ -584,7 +610,7 @@ a {
     justify-content: center;
 
     span {
-      background-color: transparent;
+      // background-color: transparent;
     }
   }
   .hot {
@@ -594,7 +620,7 @@ a {
 
 .blog {
   width: 100%;
-  margin-top: 10rem;
+  margin-block: 5rem;
   &::-webkit-scrollbar {
     width: 1px;
     color: transparent;
@@ -691,16 +717,16 @@ a {
   &__container {
     padding: 0 72px;
     width: 100%;
-    background-color: transparent;
+    // background-color: transparent;
   }
 
   &__items {
     @include flex-el(space-between);
-    background-color: transparent;
+    // background-color: transparent;
   }
 
   &__item {
-    background-color: transparent;
+    // background-color: transparent;
     &:hover {
       img {
         transform: scale(1.1);
@@ -709,7 +735,7 @@ a {
   }
 
   &__link-img {
-    background-color: transparent;
+    // background-color: transparent;
     transition: transform 0.4s ease;
   }
 }
@@ -724,20 +750,20 @@ a {
     height: 100%;
     display: flex;
     padding: 95px 72px;
-    background-color: transparent;
+    // background-color: transparent;
     flex-direction: column;
     padding: 95px 72px 0 72px;
   }
 
   &__info-block {
     @include flex-el;
-    background-color: transparent;
+    // background-color: transparent;
     height: 100%;
     padding: 0;
     margin-bottom: 1rem;
   }
   &__items {
-    background-color: transparent;
+    // background-color: transparent;
     width: 100%;
     height: 295px;
     display: flex;
@@ -746,11 +772,11 @@ a {
   }
 
   &__item {
-    background-color: transparent;
-    color: #B5B5B5;
+    // background-color: transparent;
+    color: #b5b5b5;
     transition: 0.4s;
     &--title {
-      background: transparent;
+      // background: transparent;
 
       .footer-bottom__item-link {
         color: white;
@@ -770,22 +796,22 @@ a {
   }
 
   &__item-link {
-    color: #B5B5B5;
+    color: #b5b5b5;
     transition: 0.4s;
 
     img {
-      background: transparent;
+      // background: transparent;
     }
     span {
       display: none;
       opacity: 0;
-      background: transparent;
+      // background: transparent;
       margin-right: 1rem;
       transition: 0.8s ease;
     }
 
     &--dead {
-      color: #B5B5B5;
+      color: #b5b5b5;
       cursor: default;
 
       &:hover {
@@ -798,12 +824,12 @@ a {
 
   i {
     margin-right: 1rem;
-    background-color: transparent;
+    // background-color: transparent;
   }
 }
 
 .copyright {
-  background: transparent;
+  // background: transparent;
   height: 60px;
 
   hr {
@@ -813,18 +839,18 @@ a {
   &__text {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    background-color: transparent;
+    // background-color: transparent;
     align-items: center;
     height: 100%;
 
     .text {
-      background-color: transparent;
-      color: #B5B5B5;
+      // background-color: transparent;
+      color: #b5b5b5;
       font-size: 13px;
     }
 
     .res {
-      background-color: transparent;
+      // background-color: transparent;
     }
   }
 }
@@ -832,9 +858,9 @@ a {
 .res {
   &__link {
     padding-right: 1rem;
-    color: #B5B5B5;
+    color: #b5b5b5;
     i {
-      background: transparent;
+      // background: transparent;
     }
   }
 }
