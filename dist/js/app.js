@@ -11,7 +11,7 @@ const quantity = document.querySelector(".mini-card__order-qt");
 const input_search = document.querySelectorAll(".input-search");
 const response_search = document.querySelectorAll(".search__response");
 
-fetch("/dist/js/mock.json")
+fetch("dist/js/mock.json")
   .then((res) => res.json())
   .then((data) => {
     const flowers = data.flower;
