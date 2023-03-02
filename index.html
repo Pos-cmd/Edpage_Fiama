@@ -14,6 +14,7 @@
 
 <body>
   <header class="header">
+    <div class="overlay"></div>
     <nav class="nav">
       <div class="nav-top" itemscope itemtype="https://schema.org/Organization">
         <div class="nav-top__logo">
@@ -32,62 +33,122 @@
           </ul>
           <div class="contact-search__search" itemprop="potentialAction" itemscope
             itemtype="https://schema.org/SearchAction">
-            <input class="input-search" type="search" placeholder="Search here..." itemprop="query-input" />
-            <button class="btn btn__search" itemprop="query-action">
-              <i class="fas fa-magnifying-glass"></i>
-            </button>
+            <div class="contact-search__search--input">
+              <input class="input-search desktop" type="search" placeholder="Search here..." itemprop="query-input" />
+              <div class="btn btn__search" itemprop="query-action">
+                <i class="fas fa-magnifying-glass"></i>
+              </div>
+            </div>
+            <ul class="search__response ">
+              
+            </ul>
           </div>
         </div>
         <ul class="nav-top__ship mini-card" itemprop="potentialAction" itemscope
           itemtype="https://schema.org/BuyAction">
-          <li class="nav-top__ship-item mini-card__item" itemprop="result" itemscope
+          <li class="nav-top__ship-item mini-card__item" id="item-bag" itemprop="result" itemscope
             itemtype="https://schema.org/PriceSpecification">
+            <span class="mini-card__order-qt dsp-none"></span>
             <i class="fas fa-bag-shopping"></i>
           </li>
-          <li class="nav-top__ship-item mini-card__item">
-            YOUR CARD <br /><span itemprop="price">$89.25</span>
+          <li class="nav-top__ship-item mini-card__item" >
+            YOUR CARD <br /><span class="mini-card__price cart-price" itemprop="price"></span>
           </li>
           <div class="nav-top__burger">
-            <label for="burger" class="burger-menu">
-              <input type="radio" name="burger" ">
-              </label>
-              <div class=" nav-aside">
-              <ul class="nav-aside__items">
-                <li class="nav-aside__item--logo">
+            
+            <div class="burger">
+              <div class="burger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+            <div class=" nav-aside">
+              <div class="nav-aside__items">
+                <div class="nav-aside__item--logo">
                   <a class="nav__logo-link"><img itemprop="logo" src="dist/assets/img/logo.png" alt="logo" /></a>
                   <label for="" class="nav-aside__close">
-                    <input type="radio" name="burger">
+                    <i class="fas fa-xmark"></i>
                   </label>
-                </li>
-                <hr>
-                <li class="nav-aside__item--search">
-                  <input class="input-search" type="search" placeholder="Search here..." />
-                  <button class="btn btn__search">
-                    <i class="fas fa-magnifying-glass"></i>
-                  </button>
-                </li>
-                <li class="nav-aside__item">
-                  <a>HOME</a>
-                </li>
-                <li class="nav-aside__item">
-                  <a>PAGES</a>
-                </li>
-                <li class="nav-aside__item">
-                  <a>SHOP</a>
-                </li>
-                <li class="nav-aside__item">
-                  <a>PORTFOLIO</a>
-                </li>
-                <li class="nav-aside__item">
-                  <a>NEWS</a>
-                </li>
-                <li class="nav-aside__item">
-                  <a>CONTACT</a>
-                </li>
+                </div>
+                <div class="nav-aside__item--search">
+                  <div class="nav-aside__item--search-input">
+                    <input class="input-search aside" type="search" placeholder="Search here..." />
+                    <div class="btn btn__search">
+                      <i class="fas fa-magnifying-glass"></i>
+                    </div>
+                  </div>
+                    <ul class="search__response ">
+                      
+                    </ul>
+                  
+                </div>
+                <div class="nav-aside__item--menu">
+
+                  <div class="nav-aside__item">
+                    <a>HOME</a>
+                  </div>
+                  <div class="nav-aside__item">
+                    <a>PAGES</a>
+                  </div>
+                  <div class="nav-aside__item">
+                    <a>SHOP</a>
+                  </div>
+                  <div class="nav-aside__item">
+                    <a>PORTFOLIO</a>
+                  </div>
+                  <div class="nav-aside__item">
+                    <a>NEWS</a>
+                  </div>
+                  <div class="nav-aside__item">
+                    <a>CONTACT</a>
+                  </div>
+                </div>
+                <div class="nav-aside__item--footer">
+                  <div class="item-footer">
+                    <ul>
+                      <li><span><i class="fas fa-user"></i></span><span>account</span></li>
+                      <li><span><i class="fas fa-heart"></i></span><span>Wishlist</span></li>
+                      <li><span><i class="fas fa-bag-shopping"></i></span><span>Shopping Cart</span></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <ul class="nav-aside__shopping-cart">
               </ul>
+            </div>
+            <div class=" nav-aside--cart">
+              <div class="nav-aside__items">
+                <div class="nav-aside__item--logo">
+                  <h3>Cart</h3>
+                  <label for="" class="nav-aside__close">
+                    <i class="fas fa-xmark"></i>
+
+                  </label>
+                </div>
+                <div class="nav-aside__item--menu cart-list">
+                  
+                </div>
+                <div class="nav-aside__item--footer">
+                  <div class="nav-aside__item--sub-total">
+                    <h5>Subtotal: <span class="sub-total cart-price"></span></h5>
+                  </div>
+                  <div class="nav-aside__item--btn">
+                    <button class="btn btn-view ">
+                      View Cart
+                    </button>
+
+                    <button class=" btn btn-check">
+                      Checkout
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <ul class="nav-aside__shopping-cart">
+              </ul>
+            </div>
           </div>
-      </div>
-      </ul>
+        </ul>
       </div>
       <hr />
       <div class="nav-bottom">
@@ -270,17 +331,17 @@
         <div class="hero-text__container bg-trans">
           <div class="hero-text__container--text">
 
-          <h2 class="hero-text__title bg-trans">Fresh Flower</h2>
-          <h4 class="hero-text__info bg-trans">
-            Natural & Beautiful Flower Here
-          </h4>
-          <hr />
-          <h5 class="hero-text__description bg-trans">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse
-            distinctio doloremque itaque excepturi consequuntur pariatur?
-          </h5>
-          <button class="hero-text__btn-shop">Shop Now</button>
-        </div>
+            <h2 class="hero-text__title bg-trans">Fresh Flower</h2>
+            <h4 class="hero-text__info bg-trans">
+              Natural & Beautiful Flower Here
+            </h4>
+            <hr />
+            <h5 class="hero-text__description bg-trans">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse
+              distinctio doloremque itaque excepturi consequuntur pariatur?
+            </h5>
+            <button class="hero-text__btn-shop">Shop Now</button>
+          </div>
 
         </div>
       </div>
@@ -589,6 +650,6 @@
     </div>
   </div>
 </footer>
-<script src="dist/js/script.js"></script>
+<script src="/dist/js/app.js"></script>
 
 </html>

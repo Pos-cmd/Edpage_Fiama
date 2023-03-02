@@ -68,110 +68,40 @@
   .nav-bottom {
     display: none;
   }
-  .nav-aside {
-    display: flex;
-    z-index: 9;
-    position: absolute;
-    background: #fff;
-    height: 600px;
-    top: 0;
-    left: 0;
-    transform: translateX(-100%);
-    transition: transform 0.4s ease-in;
-
-    &:has(input:checked) {
-      transform: translateX(-100%);
-    }
-
-    &__items {
-      display: flex;
-      flex-direction: column;
-      width: 400px;
-      height: 95%;
-      align-items: start;
-      margin: 0;
-      padding: 2.4rem;
-      justify-content: space-between;
-    }
-
-    &__item--logo {
-      width: 100%;
-      border-bottom: 1px solid #cbd0d5;
-      padding-bottom: 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    &__close {
-      --bar-width: 2rem;
-      --bar-height: 3.5px;
-      --burger-gap: 3px;
-      --burger-height: calc(var(--bar-height) * 3 + var(--burger-gap) * 2);
-      --x-width: calc(var(--burger-height) * 1.41421356237);
-
-      display: flex;
-      flex-direction: column;
-      width: max-content;
-      gap: var(--burger-gap);
-      z-index: 2;
-      padding-inline-start: 1rem;
-      cursor: pointer;
-
-      input {
-        appearance: none;
-        opacity: 1;
-        width: 1px;
-        height: var(--bar-height);
-        // background-color: #000;
-      }
-
-      &::before,
-      &::after {
-        cursor: pointer;
-        content: "";
-        width: var(--bar-width);
-        height: var(--bar-height);
-        background-color: #000;
-        border-radius: 9999px;
-        transform-origin: left center;
-      }
-
-      &::before {
-        transform: rotate(45deg);
-        width: var(--x-width);
-        translate: 0 calc(var(--bar-height) / -2);
-      }
-
-      &::after {
-        transform: rotate(-45deg);
-        width: var(--x-width);
-        translate: 0 calc(var(--bar-height) / 2);
-      }
-    }
-
-    .input-search {
-      border: none;
-      background: aliceblue;
-      width: 80%;
-      margin: auto;
-      height: 3rem;
-      padding-inline-start: 1rem;
-    }
-    .nav-aside__item--search {
-      width: 300px;
-      display: flex;
-    }
-    .btn.btn__search {
-      border: none;
-      transform: translateX(-100%);
-      font-size: 1rem;
-    }
-  }
 
   .nav-top {
     height: 100%;
-    margin: auto 10%;
+
+  }
+
+  .burger{
+
+    span {
+      cursor: pointer;
+      content: "";
+      width: var(--bar-width);
+      height: var(--bar-height);
+      background-color: #000;
+      border-radius: 9999px;
+      transform-origin: 5px 1px;
+      transition: width 0.2s ease-in, opacity 0.2s ease-out, transform 0.4s ease;
+    }
+
+    &.open {
+      .burger-menu {
+        > span:first-child {
+          transform: rotate(45deg);
+        }
+  
+        > span:nth-child(2) {
+          opacity: 0;
+        }
+  
+        > span:last-child {
+          transform: rotate(-45deg);
+        }
+      }
+    }
   }
 
   .burger-menu {
@@ -201,36 +131,9 @@
       width: 1px;
     }
 
-    &::before,
-    &::after,
-    input {
-      cursor: pointer;
-      content: "";
-      width: var(--bar-width);
-      height: var(--bar-height);
-      background-color: #000;
-      border-radius: 9999px;
-      transform-origin: left center;
-      transition: width 0.2s ease-in, opacity 0.2s ease-out, transform 0.4s ease;
-    }
+    
 
-    &:has(input:checked)::before {
-      transform: rotate(45deg);
-      width: var(--x-width);
-      translate: 0 calc(var(--bar-height) / -2);
-    }
-
-    &:has(input:checked)::after {
-      transform: rotate(-45deg);
-      width: var(--x-width);
-      translate: 0 calc(var(--bar-height) / 2);
-    }
-
-    // FIX: Permet la visualisation de la sidebar
-    &:has(input:checked) ~ .nav-aside {
-      transform: translateX(0);
-      box-shadow: 400px -2px 200px 6px rgba(0, 0, 0, 0.35);
-    }
+    
   }
 
   .hero-text__title {
@@ -261,7 +164,6 @@
   .feature__items {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    margin: 0 10%;
     padding: 10px 2rem;
   }
   .blog__item {
@@ -287,7 +189,7 @@
       }
     }
 
-    &__item{
+    &__item {
       width: 45%;
     }
   }
@@ -393,6 +295,9 @@
 
   .hero-text__container {
     width: 70%;
+    &--text {
+      width: 100%;
+    }
   }
 
   .main__container {
@@ -481,10 +386,6 @@
       width: 90%;
       .bg-trans {
         padding: 0 5%;
-      }
-
-      &--text{
-        width: 100%;
       }
     }
   }
