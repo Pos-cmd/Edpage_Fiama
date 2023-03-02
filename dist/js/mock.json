@@ -1,0 +1,59 @@
+ {
+    "flower" : [
+        {   
+            "id": 1,
+            "name" : "Pink Flower",
+            "price": 18,
+            "image" : "dist/assets/img/pink-flower.png"
+        },
+
+        {
+            "id": 2,
+            "name":"Premium Joyful",
+            "price": 18,
+            "image": "dist/assets/img/premium-joyful.png"
+        },
+
+        {
+            "id": 3,
+            "name":"Red Rose Bouquet",
+            "price": 18,
+            "image": "dist/assets/img/rose-bouquet.png"
+        },
+
+        {
+            "id": 4,
+            "name": "White Rose",
+            "price": 16,
+            "image": "dist/assets/img/white-rose.png"
+        },
+
+        {
+            "id": 5,
+            "name": "Rose Surprised",
+            "price": 12,
+            "image": "dist/assets/img/rose-surprised.png"
+        },
+
+        {
+            "id": 6,
+            "name": "Tropical Peace Lilly",
+            "price": 14,
+            "image": "dist/assets/img/tropical-peace-lilly.png"
+        },
+
+        {
+            "id": 7,
+            "name": "Heart's Desire",
+            "price": 15,
+            "image": "dist/assets/img/heart-desire.png"
+        },
+         
+        {
+            "id": 8,
+            "name": "Assorted Rose",
+            "price": 17,
+            "image": "dist/assets/img/assorted-rose.png"
+        }
+    ]
+}
