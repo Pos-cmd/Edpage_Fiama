@@ -42,6 +42,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: rgba(0, 100, 0, 0.05);
+  outline: 1px solid red;
   font-family: "Montserrat", "Sans-serif";
 }
 
@@ -238,7 +240,8 @@ a:hover {
   background: #fff;
   top: 0;
   left: 0;
-  width: 400px;
+  max-width: 400px;
+  width: 100%;
   opacity: 0;
   display: none;
   height: 100vh;
@@ -248,7 +251,7 @@ a:hover {
 .nav-aside__items {
   display: flex;
   flex-direction: column;
-  width: 20rem;
+  width: 90%;
   height: 42.0625rem;
   align-items: start;
   margin: auto;
@@ -438,7 +441,8 @@ a:hover {
 }
 
 .nav-aside--cart {
-  width: 400px;
+  max-width: 400px;
+  width: 100%;
   height: 100vh;
   opacity: 0;
   background-color: #fff;
@@ -1356,6 +1360,9 @@ a:hover {
     display: flex;
     justify-content: center;
   }
+  .banner__items--two .banner__item {
+    width: 100%;
+  }
   .banner__item {
     width: 45%;
   }
@@ -1398,7 +1405,7 @@ a:hover {
     width: 70%;
   }
   .banner__items--two {
-    grid-template-columns: 1fr;
+    flex-direction: column;
   }
   .card__items {
     grid-template-columns: repeat(2, 1fr);
@@ -1463,17 +1470,33 @@ a:hover {
   .blog__items {
     gap: 2rem;
   }
-  .banner__item {
-    width: 363px;
+  .blog__section-title {
+    line-height: normal;
+    font-size: 26px;
   }
-  .card__item {
-    width: 173px;
+  .blog__section-title::after {
+    content: "";
+    height: 3px;
+    width: 20%;
+    margin-top: 0.5rem;
+    background: red;
   }
   .card__items {
     gap: 10px;
   }
   .card__items--row {
     gap: 10px;
+  }
+  .card__section-title {
+    line-height: normal;
+    font-size: 26px;
+  }
+  .card__section-title::after {
+    content: "";
+    height: 3px;
+    width: 20%;
+    margin-top: 0.5rem;
+    background: red;
   }
   #hero-text {
     width: 100%;
@@ -1495,11 +1518,11 @@ a:hover {
   .hero-text__container .bg-trans {
     padding: 0 5%;
   }
-  .feature__items {
-    width: 363px;
+  .feature {
+    width: 90%;
   }
   .main__container {
-    width: 363px;
+    width: 90%;
   }
   .footer-bottom__container {
     padding: 95px 2% 0;
