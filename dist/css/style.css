@@ -42,8 +42,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: rgba(0, 100, 0, 0.05);
-  outline: 1px solid red;
   font-family: "Montserrat", "Sans-serif";
 }
 
