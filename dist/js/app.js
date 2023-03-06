@@ -3,17 +3,19 @@ import {
   showQuantity,
   showFlowerItems,
   searchItem,
-  updateCard,
+  showFlowers,
 } from "./functions.js";
-
 
 fetch("dist/js/mock.json")
   .then((res) => res.json())
   .then((data) => {
     const flowers = data.flower;
-    updateCard(flowers)
+    showFlowers(flowers);
     showCart();
     showQuantity();
-    showFlowerItems(flowers)
+    showFlowerItems(flowers);
     searchItem(flowers);
-  });
+  })
+  .catch((error) =>
+    console.log(`Nous avons pas pue recuperer les donner : ${error}`)
+  );
