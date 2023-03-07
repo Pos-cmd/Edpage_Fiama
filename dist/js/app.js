@@ -1,21 +1,12 @@
-import {
-  showCart,
-  showQuantity,
-  showFlowerItems,
-  searchItem,
-  showFlowers,
-} from "./functions.js";
+import { init } from "./functions.js";
 
-fetch("dist/js/mock.json")
-  .then((res) => res.json())
-  .then((data) => {
-    const flowers = data.flower;
-    showFlowers(flowers);
-    showCart();
-    showQuantity();
-    showFlowerItems(flowers);
-    searchItem(flowers);
-  })
-  .catch((error) =>
-    console.log(`Nous avons pas pue recuperer les donner : ${error}`)
-  );
+(async function () {
+  try {
+    const res = await fetch("dist/js/mock.json");
+    const data = await res.json();
+    const flowers = await data.flower;
+    init(flowers);
+  } catch (error) {
+    console.log(`Nous avons rencontrer une erreur: ${error}`);
+  }
+})();

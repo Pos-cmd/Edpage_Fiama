@@ -4,13 +4,71 @@ const quantity = document.querySelector(".mini-card__order-qt");
 const cardItems = document.querySelectorAll(".card__items");
 
 /**
+ *Function d'initialisation de la page et des fonctionnalité principale
+ *
+ * @param {object} flowers
+ */
+export function init(flowers) {
+  showFlowers(flowers);
+  showCart();
+  showQuantity();
+  addFlowerToCart(flowers);
+  searchItem(flowers);
+}
+
+/**
+ * Ajout d'un ecouteur d'évènement a l'input de recherche
+ * permettant l'affichage des resultats lorsque l'utilisateur
+ * commence à ecrire
+ *
+ * @param {object[]} flowers Tableau d'objet a utiliser pour trouver les données
+ * @returns {void}
+ */
+function searchItem(flowers) {
+  const input_search = document.querySelectorAll(".input-search");
+  const response_search = document.querySelectorAll(".search__response");
+
+  input_search.forEach((input) => {
+    response_search.forEach((search) => {
+      input.addEventListener("focus", function () {
+        input.parentElement.parentElement.classList.add("on");
+
+        input.addEventListener("input", function (e) {
+          const element = e.target.value.toLowerCase();
+          const items = findFlowerByInput(flowers, element);
+
+          if (search.parentElement.classList.contains("on")) {
+            search.innerHTML = showSearchOutput(items);
+          }
+          if (element != "") {
+            search.classList.add("dsp-block");
+            search.classList.remove("dsp-none");
+          } else {
+            search.classList.remove("dsp-block");
+            search.classList.add("dsp-none");
+          }
+        });
+      });
+
+      input.addEventListener("blur", function () {
+        input.parentElement.parentElement.classList.remove("on");
+        search.classList.add("dsp-none");
+        search.classList.remove("dsp-block");
+        input.value = "";
+      });
+    });
+  });
+}
+
+/**
  * Fonction permettant l'affichage et
  * la mise a jour dans fleur dans le panier d'achat
+ *
  * @function
  * @name showCart
  * @return {void}
  */
-export function showCart() {
+function showCart() {
   updateCart(getFlowerCart());
   const btnsRemove = document.querySelectorAll(".remove");
   deleteOnClick(btnsRemove);
@@ -24,7 +82,7 @@ export function showCart() {
  * @name showQuantity
  * @return {void}
  */
-export function showQuantity() {
+function showQuantity() {
   if (getCartQuantity() > 0) {
     quantity.textContent = getCartQuantity();
     quantity.classList.remove("dsp-none");
@@ -36,32 +94,12 @@ export function showQuantity() {
 }
 
 /**
- * Fonction permettant l'affichage des fleurs dans la base de donnée
- *
- * @param {object[]} flowers
- * @returns {void}
- */
-export function showFlowerItems(flowers) {
-  const btn_add = document.querySelectorAll(".card__img-panel-add");
-
-  btn_add.forEach((button) => {
-    button.addEventListener("click", function () {
-      const flowerData = findFlowerById(flowers, button.dataset.item);
-      addFlower(flowerData);
-      showCart();
-      showQuantity();
-      getCartAmount();
-    });
-  });
-}
-
-/**
  * Fonction permettant l'affichage des fleurs dans le DOM
  *
  * @param {object[]} flowers
  * @returns {void}
  */
-export function showFlowers(flowers) {
+function showFlowers(flowers) {
   const html = flowers
     .map((flower) => {
       return `<li class="card__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
@@ -101,47 +139,66 @@ export function showFlowers(flowers) {
 }
 
 /**
- * Ajout d'un ecouteur d'évènement a l'input de recherche
- * permettant l'affichage des resultats lorsque l'utilisateur
- * commence à ecrire
+ * Fonction permettant de crée le code HTML
+ *  pour l'affichage fleurs recherchées
  *
- * @param {object[]} flowers Tableau d'objet a utiliser pour trouver les données
+ * @param {object[]} flowers
+ * @returns {string} Les données html a integrée dans le DOM
+ */
+function showSearchOutput(flowers) {
+  const html = flowers
+    .map((response) => {
+      return `
+        <li class="search__response--item">
+          <a href="#" class="search__response--link">
+            <span class="response-name">${response.name}</span>
+          </a>
+        </li>
+  
+        `;
+    })
+    .join(" ");
+
+  return html;
+}
+
+/**
+ * Ajout d'un écouteur d'évènement au bouton des produits,
+ * qui retrouve et ajoute la fleur correspondant au panier d'achat.
+ *
+ * @param {object[]} flowers
  * @returns {void}
  */
-export function searchItem(flowers) {
-  const input_search = document.querySelectorAll(".input-search");
-  const response_search = document.querySelectorAll(".search__response");
+function addFlowerToCart(flowers) {
+  const btn_add = document.querySelectorAll(".card__img-panel-add");
 
-  input_search.forEach((input) => {
-    response_search.forEach((search) => {
-      input.addEventListener("focus", function () {
-        input.parentElement.parentElement.classList.add("on");
-
-        input.addEventListener("input", function (e) {
-          const element = e.target.value.toLowerCase();
-          const items = findFlowerByInput(flowers, element);
-
-          if (search.parentElement.classList.contains("on")) {
-            search.innerHTML = showSearchOutput(items);
-          }
-          if (element != "") {
-            search.classList.add("dsp-block");
-            search.classList.remove("dsp-none");
-          } else {
-            search.classList.remove("dsp-block");
-            search.classList.add("dsp-none");
-          }
-        });
-      });
-
-      input.addEventListener("blur", function () {
-        input.parentElement.parentElement.classList.remove("on");
-        search.classList.add("dsp-none");
-        search.classList.remove("dsp-block");
-        input.value = "";
-      });
+  btn_add.forEach((button) => {
+    button.addEventListener("click", function () {
+      const flowerData = findFlowerById(flowers, button.dataset.item);
+      addFlowerToLocalStorage(flowerData);
+      showCart();
+      showQuantity();
+      getCartAmount();
     });
   });
+}
+
+/**
+ * function permettant d'ajouter une fleur le localstorage
+ *
+ * @param {object} flower
+ */
+function addFlowerToLocalStorage(flower) {
+  let cart = getFlowerCart();
+  const foundFlower = cart.find((f) => f.id === flower.id);
+
+  if (foundFlower != undefined) {
+    foundFlower.quantity++;
+  } else {
+    flower.quantity = 1;
+    cart.push(flower);
+  }
+  saveFlower(cart);
 }
 
 /**
@@ -179,31 +236,7 @@ function findFlowerByInput(flowers, input) {
 }
 
 /**
- * Fonction permettant de crée le code HTML
- *  pour l'affichage fleurs recherchées
- *
- * @param {object[]} flowers
- * @returns {string} Les données html a integrée dans le DOM
- */
-function showSearchOutput(flowers) {
-  const html = flowers
-    .map((response) => {
-      return `
-        <li class="search__response--item">
-          <a href="#" class="search__response--link">
-            <span class="response-name">${response.name}</span>
-          </a>
-        </li>
-  
-        `;
-    })
-    .join(" ");
-
-  return html;
-}
-
-/**
- * Fonction permettant la conversion d'un nombre dans le format americain
+ * Fonction permettant le formattage d'un nombre dans le format americain
  *
  * @param {number} value
  * @returns {string} Le prix formattées dans le format US ($18.00)
@@ -275,8 +308,11 @@ function updateCart(flowers) {
 }
 
 /**
- * Function permettant de
- * Supprimer un element dans la liste des fleur a acheter
+ * Ajout d'un ecouteur d'évènement attacher
+ * au bouton des fleurs dans le panier
+ * permettant la suppression progressive
+ * des fleurs dans le panier et le localStorage,
+ * ainsi que la mise a jour graphique au fur et a mesure.
  *
  * @param {NodeList} nodelist
  */
@@ -286,7 +322,7 @@ function deleteOnClick(nodelist) {
     button.addEventListener("click", function () {
       let cart = getFlowerCart();
       let flower = findFlowerById(cart, button.dataset.item);
-      removeFlower(flower);
+      removeFlowerToLocalStorage(flower);
       showQuantity();
       showCart();
     });
@@ -294,29 +330,11 @@ function deleteOnClick(nodelist) {
 }
 
 /**
- * function permettant d'ajouter une fleur le localstorage
- *
- * @param {object} flower
- */
-function addFlower(flower) {
-  let cart = getFlowerCart();
-  const foundFlower = cart.find((f) => f.id === flower.id);
-
-  if (foundFlower != undefined) {
-    foundFlower.quantity++;
-  } else {
-    flower.quantity = 1;
-    cart.push(flower);
-  }
-  saveFlower(cart);
-}
-
-/**
  * Function permettant de diminuer puis de supprimer une fleur dans le localsorage
  *
  * @param {object} flower
  */
-function removeFlower(flower) {
+function removeFlowerToLocalStorage(flower) {
   let cart = getFlowerCart();
   let foundFlower = cart.find((fl) => fl.id == flower.id);
   if (foundFlower.quantity == 1) {
