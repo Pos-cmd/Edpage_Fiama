@@ -1,4 +1,4 @@
-import { init } from "./functions.js";
+import { init } from "./operations.js";
 
 (async function () {
   try {

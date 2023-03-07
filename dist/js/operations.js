@@ -13,7 +13,7 @@ export function init(flowers) {
   showCart();
   showQuantity();
   addFlowerToCart(flowers);
-  searchItem(flowers);
+  searchFlowers(flowers);
 }
 
 /**
@@ -24,7 +24,7 @@ export function init(flowers) {
  * @param {object[]} flowers Tableau d'objet a utiliser pour trouver les données
  * @returns {void}
  */
-function searchItem(flowers) {
+function searchFlowers(flowers) {
   const input_search = document.querySelectorAll(".input-search");
   const response_search = document.querySelectorAll(".search__response");
 
