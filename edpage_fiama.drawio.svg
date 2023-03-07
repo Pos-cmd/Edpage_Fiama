@@ -1,0 +1,64 @@
+<mxfile host="65bd71144e">
+    <diagram id="dFPVyb_FSy1q6SOHMAxM" name="Page-1">
+        <mxGraphModel dx="750" dy="497" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="25" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="2" target="5">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="Acces à la page" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="260" y="220" width="120" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="5" target="14">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="Accés reussie au &lt;br&gt;donnér du mock.json" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="245.5" y="350" width="149" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="YES" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="260" y="440" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" style="edgeStyle=none;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="10" target="11">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="NO" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="394.5" y="355" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="Afficher l'erreur du catch" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="454.5" y="355" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="" style="group" vertex="1" connectable="0" parent="1">
+                    <mxGeometry x="215.5" y="490" width="209" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="15">
+                    <mxGeometry width="209" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="Appel de la fonction init()&lt;br&gt;&amp;nbsp;en lui passant les donnée récupérer" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="15">
+                    <mxGeometry x="14.5" y="25" width="180" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="" style="group" vertex="1" connectable="0" parent="1">
+                    <mxGeometry x="210" y="650" width="220" height="300" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="24">
+                    <mxGeometry width="220" height="300" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="Affichage des fleurs avec la fonction:&lt;br&gt;displayFlowers()" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="24">
+                    <mxGeometry x="48.699565217391324" y="15" width="122.6086956521739" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="Affichage du panier avec la fonction:&lt;br&gt;displayBasket()" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="24">
+                    <mxGeometry x="48.699565217391296" y="105" width="122.6086956521739" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="Affichage de la quantité des fleurs dans la panier avec la fonction:&lt;br&gt;displayQUantity()" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="24">
+                    <mxGeometry x="43.58956521739131" y="195" width="132.82608695652175" height="75" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="Mise a jour de l'UI" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="24">
+                    <mxGeometry x="100.00130434782608" y="270" width="112.39130434782608" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="14" target="4">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

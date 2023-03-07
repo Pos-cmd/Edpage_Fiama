@@ -12,8 +12,6 @@ export function init(flowers) {
   displayFlowers(flowers);
   displayBasket();
   displayQuantity();
-  addFlowerToBasket(flowers);
-  searchFlowers(flowers);
 }
 
 /**
@@ -136,6 +134,8 @@ function displayFlowers(flowers) {
     .join(" ");
 
   cardItems.forEach((items) => (items.innerHTML = html));
+  addFlowerToBasket(flowers);
+  searchFlowers(flowers);
 }
 
 /**
@@ -360,7 +360,7 @@ function countFlowersInBasket() {
 
 /**
  * Function permettant d'afficher le montant total des fleur dans le DOM
- * 
+ *
  * @returns {void}
  */
 function displayCartAmount() {
