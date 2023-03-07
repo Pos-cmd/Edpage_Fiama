@@ -1,3 +1,7 @@
+import {
+  displayBasket,
+} from "./operations.js";
+
 const nav_aside_menu = document.querySelector(".nav-aside");
 const nav_aside_cart = document.querySelector(".nav-aside--cart");
 const shopping_cart_item = document.getElementById("item-bag");
@@ -6,6 +10,7 @@ const toggle_menu = document.querySelector(".burger");
 const btn_close_aside = document.querySelectorAll(".nav-aside__close");
 
 shopping_cart_item.addEventListener("click", (e) => {
+  displayBasket();
   nav_aside_cart.classList.add("show-nav-aside");
   overlay.classList.add("on");
 });

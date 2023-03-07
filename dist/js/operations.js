@@ -10,8 +10,58 @@ const cardItems = document.querySelectorAll(".card__items");
  */
 export function init(flowers) {
   displayFlowers(flowers);
-  displayBasket();
+  displayCartAmount();
   displayQuantity();
+}
+
+/**
+ * Function permettant de modifier le DOM
+ * afin d'ajouter la liste des fleur à acheter
+ *
+ * @param {object[]} flowers Liste des fleurs
+ */
+export function displayBasket() {
+  const flowers = getBasketFlower();
+  const html = flowers
+    .map((flower) => {
+      return `<div class="nav-aside__cart--item">
+        <div class="nav-aside__cart--img">
+          <button class="nav-aside__cart--badge remove" data-item="${
+            flower.id
+          }">
+           <i class="fas fa-trash-can"></i>
+          </button>
+          <a  class="nav-aside__cart--link"
+            ><img src="${flower.image}" alt="${flower.name}"
+          /></a>
+        </div>
+        <div class="nav-aside__cart--info">
+          <div class="nav-aside__cart--title" itemprop="name">${flower.name.toUpperCase()}</div>
+          <div class="nav-aside__cart--desc">
+            <span class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">${
+              flower.quantity
+            } X ${formatCur(flower.price, "en-US")}</span>
+          </div>
+        </div>
+  
+    </div>`;
+    })
+    .join(" ");
+
+  nav_aside_cart_list.innerHTML = html;
+
+  deleteOnClick();
+}
+
+/**
+ * Function de mise a jour de l'interface utilisateur
+ *
+ * @function updateUI
+ */
+function updateUI() {
+  displayCartAmount();
+  displayQuantity();
+  displayBasket();
 }
 
 /**
@@ -60,27 +110,12 @@ function searchFlowers(flowers) {
 
 /**
  * Fonction permettant l'affichage et
- * la mise a jour dans fleur dans le panier d'achat
- *
- * @function
- * @name displayBasket
- * @return {void}
- */
-function displayBasket() {
-  renderBasketFlowers(getBasketFlower());
-  const btnsRemove = document.querySelectorAll(".remove");
-  deleteOnClick(btnsRemove);
-  displayCartAmount();
-}
-
-/**
- * Fonction permettant l'affichage et
  * la mise a jour du montant total des fleur dans le panier d'achat
  * @function
  * @name displayQuantity
  * @return {void}
  */
-function displayQuantity() {
+export function displayQuantity() {
   if (countFlowersInBasket() > 0) {
     quantity.textContent = countFlowersInBasket();
     quantity.classList.remove("dsp-none");
@@ -176,9 +211,7 @@ function addFlowerToBasket(flowers) {
     button.addEventListener("click", function () {
       const flowerData = findFlowerById(flowers, button.dataset.item);
       addFlowerToLocalStorage(flowerData);
-      displayBasket();
-      displayQuantity();
-      displayCartAmount();
+      updateUI();
     });
   });
 }
@@ -272,59 +305,21 @@ function saveFlowerToLocalStorage(flower) {
 }
 
 /**
- * Function permettant de modifier le DOM
- * afin d'ajouter la liste des fleur à acheter
- *
- * @param {object[]} flowers Liste des fleurs
- */
-function renderBasketFlowers(flowers) {
-  const html = flowers
-    .map((flower) => {
-      return `<div class="nav-aside__cart--item">
-        <div class="nav-aside__cart--img">
-          <button class="nav-aside__cart--badge remove" data-item="${
-            flower.id
-          }">
-           <i class="fas fa-trash-can"></i>
-          </button>
-          <a  class="nav-aside__cart--link"
-            ><img src="${flower.image}" alt="${flower.name}"
-          /></a>
-        </div>
-        <div class="nav-aside__cart--info">
-          <div class="nav-aside__cart--title" itemprop="name">${flower.name.toUpperCase()}</div>
-          <div class="nav-aside__cart--desc">
-            <span class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">${
-              flower.quantity
-            } X ${formatCur(flower.price, "en-US")}</span>
-          </div>
-        </div>
-  
-    </div>`;
-    })
-    .join(" ");
-
-  nav_aside_cart_list.innerHTML = html;
-}
-
-/**
  * Ajout d'un ecouteur d'évènement attacher
  * au bouton des fleurs dans le panier
  * permettant la suppression progressive
  * des fleurs dans le panier et le localStorage,
  * ainsi que la mise a jour graphique au fur et a mesure.
  *
- * @param {NodeList} nodelist
  */
-function deleteOnClick(nodelist) {
-  const btn_remove_flower = nodelist;
+function deleteOnClick() {
+  const btn_remove_flower = document.querySelectorAll(".remove");
   btn_remove_flower.forEach((button) => {
     button.addEventListener("click", function () {
       let cart = getBasketFlower();
       let flower = findFlowerById(cart, button.dataset.item);
       decrementFlowerQuantityInBasket(flower);
-      displayQuantity();
-      displayBasket();
+      updateUI();
     });
   });
 }
