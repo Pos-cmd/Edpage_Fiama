@@ -9,10 +9,10 @@ const cardItems = document.querySelectorAll(".card__items");
  * @param {object} flowers
  */
 export function init(flowers) {
-  showFlowers(flowers);
-  showCart();
-  showQuantity();
-  addFlowerToCart(flowers);
+  displayFlowers(flowers);
+  displayBasket();
+  displayQuantity();
+  addFlowerToBasket(flowers);
   searchFlowers(flowers);
 }
 
@@ -38,7 +38,7 @@ function searchFlowers(flowers) {
           const items = findFlowerByInput(flowers, element);
 
           if (search.parentElement.classList.contains("on")) {
-            search.innerHTML = showSearchOutput(items);
+            search.innerHTML = displaySearchOutput(items);
           }
           if (element != "") {
             search.classList.add("dsp-block");
@@ -65,26 +65,26 @@ function searchFlowers(flowers) {
  * la mise a jour dans fleur dans le panier d'achat
  *
  * @function
- * @name showCart
+ * @name displayBasket
  * @return {void}
  */
-function showCart() {
-  updateCart(getFlowerCart());
+function displayBasket() {
+  renderBasketFlowers(getBasketFlower());
   const btnsRemove = document.querySelectorAll(".remove");
   deleteOnClick(btnsRemove);
-  getCartAmount();
+  displayCartAmount();
 }
 
 /**
  * Fonction permettant l'affichage et
  * la mise a jour du montant total des fleur dans le panier d'achat
  * @function
- * @name showQuantity
+ * @name displayQuantity
  * @return {void}
  */
-function showQuantity() {
-  if (getCartQuantity() > 0) {
-    quantity.textContent = getCartQuantity();
+function displayQuantity() {
+  if (countFlowersInBasket() > 0) {
+    quantity.textContent = countFlowersInBasket();
     quantity.classList.remove("dsp-none");
     quantity.classList.add("dsp-flex");
   } else {
@@ -99,7 +99,7 @@ function showQuantity() {
  * @param {object[]} flowers
  * @returns {void}
  */
-function showFlowers(flowers) {
+function displayFlowers(flowers) {
   const html = flowers
     .map((flower) => {
       return `<li class="card__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
@@ -145,7 +145,7 @@ function showFlowers(flowers) {
  * @param {object[]} flowers
  * @returns {string} Les données html a integrée dans le DOM
  */
-function showSearchOutput(flowers) {
+function displaySearchOutput(flowers) {
   const html = flowers
     .map((response) => {
       return `
@@ -169,16 +169,16 @@ function showSearchOutput(flowers) {
  * @param {object[]} flowers
  * @returns {void}
  */
-function addFlowerToCart(flowers) {
+function addFlowerToBasket(flowers) {
   const btn_add = document.querySelectorAll(".card__img-panel-add");
 
   btn_add.forEach((button) => {
     button.addEventListener("click", function () {
       const flowerData = findFlowerById(flowers, button.dataset.item);
       addFlowerToLocalStorage(flowerData);
-      showCart();
-      showQuantity();
-      getCartAmount();
+      displayBasket();
+      displayQuantity();
+      displayCartAmount();
     });
   });
 }
@@ -189,7 +189,7 @@ function addFlowerToCart(flowers) {
  * @param {object} flower
  */
 function addFlowerToLocalStorage(flower) {
-  let cart = getFlowerCart();
+  let cart = getBasketFlower();
   const foundFlower = cart.find((f) => f.id === flower.id);
 
   if (foundFlower != undefined) {
@@ -198,7 +198,7 @@ function addFlowerToLocalStorage(flower) {
     flower.quantity = 1;
     cart.push(flower);
   }
-  saveFlower(cart);
+  saveFlowerToLocalStorage(cart);
 }
 
 /**
@@ -253,7 +253,7 @@ function formatCur(value) {
  *
  * @returns {object[]|undefined} La liste des fleurs enregistrer dans le localStorage
  */
-function getFlowerCart() {
+function getBasketFlower() {
   let flowerCart = localStorage.getItem("flower");
   if (flowerCart == null) {
     return [];
@@ -267,7 +267,7 @@ function getFlowerCart() {
  *
  * @param {object} flower  Données de la fleur a ajouter au LocalStorage
  */
-function saveFlower(flower) {
+function saveFlowerToLocalStorage(flower) {
   localStorage.setItem("flower", JSON.stringify(flower));
 }
 
@@ -277,7 +277,7 @@ function saveFlower(flower) {
  *
  * @param {object[]} flowers Liste des fleurs
  */
-function updateCart(flowers) {
+function renderBasketFlowers(flowers) {
   const html = flowers
     .map((flower) => {
       return `<div class="nav-aside__cart--item">
@@ -320,11 +320,11 @@ function deleteOnClick(nodelist) {
   const btn_remove_flower = nodelist;
   btn_remove_flower.forEach((button) => {
     button.addEventListener("click", function () {
-      let cart = getFlowerCart();
+      let cart = getBasketFlower();
       let flower = findFlowerById(cart, button.dataset.item);
-      removeFlowerToLocalStorage(flower);
-      showQuantity();
-      showCart();
+      decrementFlowerQuantityInBasket(flower);
+      displayQuantity();
+      displayBasket();
     });
   });
 }
@@ -334,24 +334,24 @@ function deleteOnClick(nodelist) {
  *
  * @param {object} flower
  */
-function removeFlowerToLocalStorage(flower) {
-  let cart = getFlowerCart();
+function decrementFlowerQuantityInBasket(flower) {
+  let cart = getBasketFlower();
   let foundFlower = cart.find((fl) => fl.id == flower.id);
   if (foundFlower.quantity == 1) {
     cart = cart.filter((fl) => fl.id != flower.id);
   } else {
     foundFlower.quantity--;
   }
-  saveFlower(cart);
+  saveFlowerToLocalStorage(cart);
 }
 
 /**
- * Function permettant de calculer la quantitée des fleurs à acheter
+ * Function permettant de calculer la quantitée des fleurs dans le panier
  *
  * @returns {number} La quantitée total des fleurs
  */
-function getCartQuantity() {
-  let cart = getFlowerCart();
+function countFlowersInBasket() {
+  let cart = getBasketFlower();
   return Object.entries(cart).reduce((acc, flower) => {
     const [key, value] = flower;
     return acc + Number(value.quantity);
@@ -360,9 +360,11 @@ function getCartQuantity() {
 
 /**
  * Function permettant d'afficher le montant total des fleur dans le DOM
+ * 
+ * @returns {void}
  */
-function getCartAmount() {
-  let cart = getFlowerCart();
+function displayCartAmount() {
+  let cart = getBasketFlower();
   const amount = Object.entries(cart).reduce((acc, flower) => {
     const [key, value] = flower;
     return acc + Number(value.price) * Number(value.quantity);
