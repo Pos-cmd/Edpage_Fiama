@@ -6,7 +6,6 @@ const cardItems = document.querySelectorAll(".card__items");
 /**
  *Function d'initialisation de la page et des fonctionnalité principale
  *
- * @param {object} flowers
  */
 export async function init() {
   try {
@@ -22,6 +21,11 @@ export async function init() {
   }
 }
 
+/**
+ * Function permettant de récupérer les données du mock.json a partir d'un fetch
+ * 
+ * @returns {promise<Flowers>} Une promise contenant les fleurs récupérer dans le mock.json
+ */
 async function fetchFlower() {
   try {
     const res = await fetch("dist/js/mock.json");
