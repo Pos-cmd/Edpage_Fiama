@@ -28,7 +28,9 @@ export async function init() {
  */
 async function fetchFlower() {
   try {
-    const res = await fetch("dist/js/mock.json");
+    const url = "dist/js/mock.json"
+    const res = await fetch(url);
+    if(!res.ok) throw new Error(`Nous n'arrivons pas a joindre le lien => ${url}`)
     const data = await res.json();
     return data.flower;
   } catch (error) {
