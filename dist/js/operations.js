@@ -8,10 +8,28 @@ const cardItems = document.querySelectorAll(".card__items");
  *
  * @param {object} flowers
  */
-export function init(flowers) {
-  displayFlowers(flowers);
-  displayCartAmount();
-  displayQuantity();
+export async function init() {
+  try {
+    const flowers = await fetchFlower();
+    const basket = getBasketFlower();
+    displayFlowers(flowers);
+    if (basket.length > 0) {
+      displayCartAmount();
+      displayQuantity();
+    }
+  } catch (error) {
+    console.log(`Nous avons rencontrer une erreur: ${error}`);
+  }
+}
+
+async function fetchFlower() {
+  try {
+    const res = await fetch("dist/js/mock.json");
+    const data = await res.json();
+    return data.flower;
+  } catch (error) {
+    console.log(`Nous avons rencontrer une erreur: ${error}`);
+  }
 }
 
 /**
@@ -159,8 +177,14 @@ function displayFlowers(flowers) {
       <div class="card__item-info">
         <div class="card__item-title" itemprop="name">${flower.name.toUpperCase()}</div>
         <div class="card__item-desc">
-          <span class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">$18.00</span>
-          <span class="past-price">${formatCur(flower.price, "en-US")}</span>
+          <span class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">${formatCur(
+            flower.price,
+            "en-US"
+          )}</span>
+          <span class="past-price">${formatCur(
+            flower.price + 2,
+            "en-US"
+          )}</span>
         </div>
       </div>
       </div>
