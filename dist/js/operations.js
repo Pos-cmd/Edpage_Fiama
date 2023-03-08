@@ -9,7 +9,7 @@ const cardItems = document.querySelectorAll(".card__items");
  */
 export async function init() {
   try {
-    const flowers = await fetchFlower();
+    const flowers = await fetchFlowerData();
     const basket = getBasketFlower();
     displayFlowers(flowers);
     if (basket.length > 0) {
@@ -26,7 +26,7 @@ export async function init() {
  * 
  * @returns {promise<Flowers>} Une promise contenant les fleurs récupérer dans le mock.json
  */
-async function fetchFlower() {
+async function fetchFlowerData() {
   try {
     const url = "dist/js/mock.json"
     const res = await fetch(url);
