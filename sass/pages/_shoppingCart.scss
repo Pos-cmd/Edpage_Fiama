@@ -1,0 +1,138 @@
+.shoppingCartArea {
+  display: grid;
+  place-items: center;
+
+  &__container {
+    height: 100%;
+    width: 90%;
+  }
+
+  &__table {
+    width: 100%;
+  }
+
+  &__image {
+    width: 110px;
+  }
+
+  &__min-plus {
+    display: flex;
+    height: 50px;
+    margin-inline: auto;
+    width: 145px;
+    background-color: #ebe8e8;
+  }
+
+  &__qt {
+    width: 40%;
+    height: 100%;
+    text-align: center;
+    background-color: #ebe8e8;
+    border: none;
+  }
+
+  &__cartTotal {
+    max-width: 450px;
+    width: 100%;
+    float: right;
+    margin-top: 3.125rem;
+
+    .shoppingCartArea__table {
+      background: #f7f8fa;
+    }
+
+    h4,
+    .shoppingCartArea__proceed--link {
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 26px;
+    }
+
+    h4 {
+      padding-block: 0.5rem;
+    }
+
+    td {
+      text-align: left !important;
+      padding: 8px !important;
+    }
+  }
+
+  &__proceed {
+    background: $primary-color;
+    display: grid;
+    place-items: center;
+    &--link {
+      margin-block: 13px;
+      color: #fff;
+
+      &:hover {
+        color: #fff !important;
+      }
+    }
+  }
+
+  &__coupon {
+    text-align: left;
+    height: 3.25rem;
+  }
+
+  &__couponInput,
+  &__couponSubmit,
+  &__cartUpdate {
+    height: 100%;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  &__couponInput {
+    background: #ebe8e8;
+    padding-inline-start: 1rem;
+  }
+
+  &__cartUpdate {
+    float: right;
+    opacity: 0.75;
+  }
+
+  &__couponSubmit {
+    cursor: pointer;
+  }
+
+  &__couponSubmit,
+  &__cartUpdate {
+    padding: 13px 40px;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    background: #4d4d4d;
+  }
+
+  &__remove{
+    cursor: pointer;
+    &:hover{
+      color: #e55472;
+    }
+  }
+
+  .qtBtn {
+    width: 30%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+  }
+
+  &__imgLink {
+    width: 80px;
+    display: block;
+  }
+
+  td {
+    padding: 20px 25px;
+    border-bottom: 1px solid #ebe8e8;
+    text-align: center;
+  }
+}

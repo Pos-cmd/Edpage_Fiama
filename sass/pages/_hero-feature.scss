@@ -1,0 +1,199 @@
+.hero {
+    position: relative;
+    width: 100%;
+    height: 700px;
+  
+    #i1,
+    #i2 {
+      display: none;
+    }
+  
+    #i1:checked ~ #one,
+    #i2:checked ~ #two {
+      z-index: 1;
+      opacity: 1;
+    }
+  }
+  
+  .slide__img {
+    position: absolute;
+    width: 100%;
+    height: 43.75rem;
+    transition: 0.4s ease-out;
+    opacity: 0;
+    z-index: -1;
+  
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  
+    &:hover {
+      + .slider-btn {
+        opacity: 1;
+        padding: 0 3rem;
+      }
+    }
+  }
+  
+  .slider-btn {
+    display: flex;
+    opacity: 0;
+    width: 100%;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    // // background: transparent;
+    padding-inline: 1rem;
+    transition: 0.5s ease;
+    z-index: 8;
+  
+    &:hover {
+      opacity: 1;
+      padding-inline: 3rem;
+    }
+  
+    &__pre,
+    &__nxt {
+      display: flex;
+      width: 3rem;
+      height: 3rem;
+      // background-color: transparent;
+      border: 1px solid $text-third-color;
+      font-size: 2rem;
+      color: $text-third-color;
+      cursor: pointer;
+      text-align: center;
+      transition: 0.4s;
+  
+      &:hover {
+        border: none;
+        background-color: $primary-color;
+        color: #fff;
+      }
+  
+      i {
+        // background-color: transparent;
+        margin: auto;
+      }
+    }
+  }
+  
+  .hero-text {
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+  
+    &__container {
+      width: 90%;
+      &--text {
+        width: 50%;
+      }
+    }
+  
+    &__title {
+      @include font-custom(65px, 700, $text-second-color, 72px);
+      opacity: 0;
+      animation: slideUp 1s forwards;
+    }
+  
+    &__info {
+      @include font-custom(25px, 400, $text-third-color, 72px);
+      opacity: 0;
+      animation: slideUp 1s 0.4s forwards;
+    }
+  
+    &__description {
+      @include font-custom(14px, 300);
+      line-height: 29px;
+      font-family: Poppins, sans-serif;
+      opacity: 0;
+      animation: slideUp 1s 0.6s forwards;
+    }
+  
+    hr {
+      background-color: #e55472;
+      height: 2px;
+      border: none;
+      width: 100px;
+      margin-bottom: 15px;
+      opacity: 0;
+      animation: slideUp 1s 0.6s forwards;
+    }
+  
+    &__btn-shop {
+      @include font-custom;
+      margin-top: 25px;
+      color: #fff;
+      width: 10rem;
+      height: 3rem;
+      border: none;
+      border-radius: 50px;
+      background-color: $primary-color;
+      padding: auto 3rem;
+      cursor: pointer;
+      transition: 0.4s;
+      opacity: 0;
+      animation: slideUp 1s 0.8s forwards;
+  
+      &:hover {
+        background-color: $text-second-color;
+      }
+    }
+  
+    &:hover {
+      + .slider-btn {
+        opacity: 1;
+        padding: 0 3rem;
+      }
+    }
+  }
+  
+  .feature {
+    // display: flex;
+    width: 90%;
+    height: 8rem;
+    transform: translateY(-50%);
+    z-index: 3;
+    position: relative;
+    margin-inline: auto;
+    // background-color: transparent;
+  
+    &__items {
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      border: 1px solid #d1dae0;
+      height: 100%;
+      width: 100%;
+    }
+  
+    &__item {
+      display: flex;
+      align-items: center;
+      line-height: 2rem;
+      span {
+        @include font-custom(14px, 300, $text-second-color);
+      }
+    }
+  
+    &__icon {
+      font-size: 2rem;
+      margin-inline: 1rem;
+      color: $text-third-color;
+    }
+  
+    &__info {
+      display: grid;
+      gap: 0.5rem;
+    }
+  }

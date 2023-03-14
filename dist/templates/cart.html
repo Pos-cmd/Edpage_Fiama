@@ -1,0 +1,72 @@
+<section class="cartPage">
+  <div class="cartPage__container">
+    <div class="cartPage__top"><h2>Cart</h2></div>
+    <div class="cartPage__bottom">
+      <div>
+        <a href="/"><h4>Home ></h4></a>
+      </div>
+      <div><span> Cart</span></div>
+    </div>
+  </div>
+</section>
+<section class="shoppingCartArea">
+  <div class="shoppingCartArea__container">
+    <div class="shoppingCartArea__items">
+      <table class="shoppingCartArea__table">
+        <tbody class="shoppingCartArea__tbody">
+          <tr>
+            <td colspan="4">
+              <div class="shoppingCartArea__coupon">
+                <input
+                  type="text"
+                  name="cart-coupon"
+                  placeholder="Coupon Code"
+                  class="shoppingCartArea__couponInput"
+                />
+                <button type="submit" class="shoppingCartArea__couponSubmit">
+                  Apply Coupon
+                </button>
+              </div>
+            </td>
+            <td colspan="2">
+              <button
+                type="submit"
+                class="shoppingCartArea__cartUpdate"
+              >
+                Update Cart
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="shoppingCartArea__cartTotal">
+      <h4>Cart Totals</h4>
+      <table class="shoppingCartArea__table">
+        <tbody>
+          <tr>
+            <td>Cart Subtotal</td>
+            <td class="cart-price">$0.00</td>
+          </tr>
+          <tr>
+            <td>Shipping and handing</td>
+            <td>$280.00</td>
+          </tr>
+          <tr>
+            <td>Vat</td>
+            <td>$0.00</td>
+          </tr>
+          <tr>
+            <td><strong>Order Total</strong></td>
+            <td><strong class="order-total">$418.00</strong></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="shoppingCartArea__proceed">
+        <a href="#checkout" class="shoppingCartArea__proceed--link"
+          >Proceed To Checkout</a
+        >
+      </div>
+    </div>
+  </div>
+</section>

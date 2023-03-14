@@ -1,0 +1,53 @@
+.page404Area {
+  display: grid;
+  place-items: center;
+
+  &__container {
+    height: 100%;
+    width: 90%;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  h1 {
+    font-size: 7.5rem;
+    line-height: 7.5rem;
+    color: $primary-color;
+    font-weight: 600;
+    margin-bottom: 0.625rem;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 1.875rem;
+    font-weight: 600;
+    line-height: 39px;
+    color: $text-primary-color;
+    text-align: center;
+    margin-bottom: 1.25rem;
+  }
+
+  p {
+    font-family: "Poppins";
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+  }
+
+  &__button{
+    display: grid;
+    place-items: center;
+    margin-top: 3.125rem;
+  }
+
+  .btn {
+    padding: 13px 2.5rem;
+    border: 1px solid white;
+    text-align: center;
+    width: 14.625rem;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  }
+}

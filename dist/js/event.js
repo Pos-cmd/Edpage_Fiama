@@ -1,6 +1,4 @@
-import {
-  displayBasket,
-} from "./operations.js";
+import { displayBasket, displayCart } from "./operations.js";
 
 const nav_aside_menu = document.querySelector(".nav-aside");
 const nav_aside_cart = document.querySelector(".nav-aside--cart");
@@ -8,6 +6,7 @@ const shopping_cart_item = document.getElementById("item-bag");
 const overlay = document.querySelector(".overlay");
 const toggle_menu = document.querySelector(".burger");
 const btn_close_aside = document.querySelectorAll(".nav-aside__close");
+const btn_view_cart = document.querySelector(".btn-view");
 
 shopping_cart_item.addEventListener("click", (e) => {
   displayBasket();
@@ -30,9 +29,11 @@ btn_close_aside.forEach((btn) =>
   })
 );
 
-overlay.addEventListener("click", (e) => {
+overlay.addEventListener("click", () => {
   nav_aside_cart.classList.remove("show-nav-aside");
   nav_aside_menu.classList.remove("show-nav-aside");
   overlay.classList.remove("on");
   toggle_menu.classList.remove("open");
 });
+
+btn_view_cart.addEventListener("click", displayCart)

@@ -1,7 +1,5 @@
 const nav_aside_cart_list = document.querySelector(".cart-list");
-const sub_total = document.querySelectorAll(".cart-price");
 const quantity = document.querySelector(".mini-card__order-qt");
-const cardItems = document.querySelectorAll(".card__items");
 
 /**
  *Function d'initialisation de la page et des fonctionnalité principale
@@ -12,6 +10,7 @@ export async function init() {
     const flowers = await fetchFlowerData();
     const basket = getBasketFlower();
     displayFlowers(flowers);
+    displayCart();
     if (basket.length > 0) {
       displayCartAmount();
       displayQuantity();
@@ -23,14 +22,15 @@ export async function init() {
 
 /**
  * Function permettant de récupérer les données du mock.json a partir d'un fetch
- * 
+ *
  * @returns {promise<Flowers>} Une promise contenant les fleurs récupérer dans le mock.json
  */
-async function fetchFlowerData() {
+export async function fetchFlowerData() {
   try {
-    const url = "dist/js/mock.json"
+    const url = "dist/js/mock.json";
     const res = await fetch(url);
-    if(!res.ok) throw new Error(`Nous n'arrivons pas a joindre le lien => ${url}`)
+    if (!res.ok)
+      throw new Error(`Nous n'arrivons pas a joindre le lien => ${url}`);
     const data = await res.json();
     return data.flower;
   } catch (error) {
@@ -77,6 +77,73 @@ export function displayBasket() {
   deleteOnClick();
 }
 
+export function displayCart() {
+  const flowers = getBasketFlower();
+  let html = flowers
+    .map((flower) => {
+      return `
+    <tr class="shoppingCartArea__element">
+    <td class="shoppingCartArea__remove">x</td>
+    <td class="shoppingCartArea__image">
+      <a class="shoppingCartArea__imgLink" href="#">
+        <img src="${flower.image}" alt="${flower.name}" data-imgSrc="${
+        flower.image
+      }">
+      </a>
+    </td>
+    <td class="shoppingCartArea__info" data-id="${flower.id}">
+      <h4>${flower.name}</h4>
+    </td>
+    <td class="shoppingCartArea__price">${formatCur(flower.price, "en-US")}</td>
+    <td class="shoppingCartArea__quantity">
+      <div class="shoppingCartArea__min-plus">
+        <div class="qtBtn dec">-</div>
+        <input type="number" class="shoppingCartArea__qt" value="${
+          flower.quantity
+        }" id="">
+        <div class="qtBtn inc">+</div>
+      </div>
+    </td>
+    <td class="shoppingCartArea__subtotal">${formatCur(
+      flower.price * flower.quantity
+    )}</td>
+  </tr>
+  `;
+    })
+    .join("");
+
+  html =
+    html +
+    `<tr >
+    <td colspan="4">
+      <div class="shoppingCartArea__coupon">
+        <input
+          type="text"
+          name="cart-coupon"
+          placeholder="Coupon Code"
+          class="shoppingCartArea__couponInput"
+        />
+        <button type="submit" class="shoppingCartArea__couponSubmit">
+          Apply Coupon
+        </button>
+      </div>
+    </td>
+    <td colspan="2">
+      <button
+        type="submit"
+        class="shoppingCartArea__cartUpdate"
+      >
+        Update Cart
+      </button>
+    </td>
+  </tr>`;
+  const tableBody = document.querySelector(".shoppingCartArea__tbody");
+  if (tableBody) {
+    tableBody.innerHTML = html;
+    updateCart();
+  }
+}
+
 /**
  * Function de mise a jour de l'interface utilisateur
  *
@@ -86,6 +153,7 @@ function updateUI() {
   displayCartAmount();
   displayQuantity();
   displayBasket();
+  displayCart();
 }
 
 /**
@@ -156,7 +224,7 @@ export function displayQuantity() {
  * @param {object[]} flowers
  * @returns {void}
  */
-function displayFlowers(flowers) {
+export function displayFlowers(flowers) {
   const html = flowers
     .map((flower) => {
       return `<li class="card__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
@@ -197,6 +265,8 @@ function displayFlowers(flowers) {
     </li>`;
     })
     .join(" ");
+
+  const cardItems = document.querySelectorAll(".card__items");
 
   cardItems.forEach((items) => (items.innerHTML = html));
   addFlowerToBasket(flowers);
@@ -314,7 +384,7 @@ function formatCur(value) {
 /**
  * Function qui récupère les données des fleurs stocker dans le localstorage
  *
- * @returns {object[]|undefined} La liste des fleurs enregistrer dans le localStorage
+ * @returns {{name, image, price, quantity}|undefined} La liste des fleurs enregistrer dans le localStorage
  */
 function getBasketFlower() {
   let flowerCart = localStorage.getItem("flower");
@@ -352,6 +422,96 @@ function deleteOnClick() {
       updateUI();
     });
   });
+}
+
+function updateSubtotal(el) {
+  const priceEl = el.parentNode.parentNode.previousElementSibling;
+  const price = parseFloat(priceEl.textContent.slice(1));
+  const quantity = Number(
+    el.parentNode.parentNode.querySelector(".shoppingCartArea__qt").value
+  );
+  const subtotal = price * quantity;
+  el.parentNode.parentNode.nextElementSibling.textContent = `$${subtotal.toFixed(
+    2
+  )}`;
+}
+
+function increaseQuantity() {
+  const incrBtn = document.querySelectorAll(".inc");
+
+  incrBtn.forEach((button) =>
+    button.addEventListener("click", () => {
+      const inputValue = button.parentNode.querySelector(
+        ".shoppingCartArea__qt"
+      );
+
+      inputValue.value++;
+      updateSubtotal(button);
+    })
+  );
+}
+
+function decreaseQuantity() {
+  const decBtn = document.querySelectorAll(".dec");
+
+  decBtn.forEach((button) =>
+    button.addEventListener("click", () => {
+      const inputValue = button.parentNode.querySelector(
+        ".shoppingCartArea__qt"
+      );
+      if (inputValue.value > 0) {
+        inputValue.value--;
+        updateSubtotal(button);
+      }
+    })
+  );
+}
+
+function deleteCart() {
+  const delBtn = document.querySelectorAll(".shoppingCartArea__remove");
+
+  delBtn.forEach((button) => {
+    button.addEventListener("click", () => {
+      button.parentNode.remove();
+    });
+  });
+}
+
+function updateCart() {
+  const update = document.querySelector(".shoppingCartArea__cartUpdate");
+
+  increaseQuantity();
+  decreaseQuantity();
+  deleteCart();
+
+  if (update) {
+    update.addEventListener("click", () => {
+      const cartRows = document.querySelectorAll(".shoppingCartArea__element");
+      let cartUpdates = [];
+      cartRows.forEach((row) => {
+        const id = row.querySelector(".shoppingCartArea__info").dataset.id;
+        const name = row.querySelector(
+          ".shoppingCartArea__info h4"
+        ).textContent;
+        const image = row.querySelector(".shoppingCartArea__image img").dataset
+          .imgsrc;
+        const price = parseFloat(
+          row
+            .querySelector(".shoppingCartArea__price")
+            .textContent.replace("$", "")
+        );
+        const quantity = parseInt(
+          row.querySelector(".shoppingCartArea__qt").value
+        );
+
+        const cartUpdate = { id, name, price, image, quantity };
+        cartUpdates.push(cartUpdate);
+      });
+
+      saveFlowerToLocalStorage(cartUpdates);
+      updateUI();
+    });
+  }
 }
 
 /**
@@ -395,5 +555,6 @@ function displayCartAmount() {
     return acc + Number(value.price) * Number(value.quantity);
   }, 0);
 
+  const sub_total = document.querySelectorAll(".cart-price");
   sub_total.forEach((price) => (price.innerText = formatCur(amount)));
 }
