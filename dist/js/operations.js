@@ -11,6 +11,7 @@ export async function init() {
     const basket = getBasketFlower();
     displayFlowers(flowers);
     displayCart();
+    getFormData();
     if (basket.length > 0) {
       displayCartAmount();
       displayQuantity();
@@ -77,6 +78,11 @@ export function displayBasket() {
   deleteOnClick();
 }
 
+/**
+ *
+ * Affiche le contenu du shopping cart.
+ * @returns {void}
+ */
 export function displayCart() {
   const flowers = getBasketFlower();
   let html = flowers
@@ -424,6 +430,11 @@ function deleteOnClick() {
   });
 }
 
+/**
+ * Met a jour le total de l'article dans le tableau affiché
+ * @param {HTMLElement} el - l'element hTML a modifié
+ * @returns {void}
+ */
 function updateSubtotal(el) {
   const priceEl = el.parentNode.parentNode.previousElementSibling;
   const price = parseFloat(priceEl.textContent.slice(1));
@@ -436,6 +447,11 @@ function updateSubtotal(el) {
   )}`;
 }
 
+/**
+
+* incrément la quantité 
+* @returns {void} 
+*/
 function increaseQuantity() {
   const incrBtn = document.querySelectorAll(".inc");
 
@@ -451,6 +467,10 @@ function increaseQuantity() {
   );
 }
 
+/**
+ * Décremente la quantité
+ * @returns {void}
+ */
 function decreaseQuantity() {
   const decBtn = document.querySelectorAll(".dec");
 
@@ -467,6 +487,10 @@ function decreaseQuantity() {
   );
 }
 
+/**
+ *  Supprime la fleur
+ * @returns {void}
+ */
 function deleteCart() {
   const delBtn = document.querySelectorAll(".shoppingCartArea__remove");
 
@@ -477,6 +501,11 @@ function deleteCart() {
   });
 }
 
+/**
+
+* UMet a jour les fleur dans le localStorage.
+* @returns {void} 
+*/
 function updateCart() {
   const update = document.querySelector(".shoppingCartArea__cartUpdate");
 
@@ -510,6 +539,23 @@ function updateCart() {
 
       saveFlowerToLocalStorage(cartUpdates);
       updateUI();
+    });
+  }
+}
+
+export function getFormData() {
+  const purchase_btn = document.querySelector(".checkoutArea__btn");
+  if (purchase_btn) {
+    purchase_btn.addEventListener("click", () => {
+      const formSection = document.querySelector(".checkoutArea");
+      const inputs = formSection.querySelectorAll("input, select");
+      const formData = {};
+      console;
+      inputs.forEach((input) => {
+        formData[input.name] = input.value;
+      });
+      console.table(formData);
+      console.table(getBasketFlower);
     });
   }
 }

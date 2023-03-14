@@ -112,7 +112,7 @@
                   />
                 </div>
               </div>
-              <div class="checkoutArea__inputItem rowTop">
+              <!-- <div class="checkoutArea__inputItem rowTop">
                 <div class="checkoutArea__input">
                   <input
                     type="text"
@@ -131,8 +131,8 @@
                     id=""
                   />
                 </div>
-              </div>
-            </div>
+              </div> 
+            </div>-->
             <div class="checkoutArea__row second">
               <div class="checkoutArea__inputItem rowBottom">
                 <h6>Country</h6>
@@ -155,7 +155,7 @@
                     <div class="checkoutArea__input">
                       <input
                         type="text"
-                        name=""
+                        name="address"
                         placeholder="House number and street name"
                         id=""
                       />
@@ -176,19 +176,19 @@
               <div class="checkoutArea__inputItem rowBottom">
                 <h6>Town/city</h6>
                 <div class="checkoutArea__input">
-                  <input type="text" placeholder="City" />
+                  <input type="text" name="town" placeholder="City" />
                 </div>
               </div>
               <div class="checkoutArea__inputItem rowBottom">
                 <h6>State</h6>
                 <div class="checkoutArea__input">
-                  <input type="text" placeholder="State" />
+                  <input type="text" name="state" placeholder="State" />
                 </div>
               </div>
               <div class="checkoutArea__inputItem rowBottom">
                 <h6>Zip</h6>
                 <div class="checkoutArea__input">
-                  <input type="text" placeholder="Zip" />
+                  <input type="text" name="zip" placeholder="Zip" />
                 </div>
               </div>
             </div>
@@ -212,13 +212,13 @@
       </div>
     </div>
     <div class="checkoutArea__transact">
-      <div class="checkoutArea__payment payment lastPart">
+      <div class="lastPart checkoutArea__payment payment ">
         <div class="payment__container">
           <h4>Payment Method</h4>
           <div class="payment__accord">
             <div class="payment__card">
               <h5>
-                <input type="radio" name="card-check" id="" />
+                <input type="radio" name="card-check" value="checkPayement" id="" />
                 Check payments
               </h5>
               <div class="payment__theme">
@@ -232,7 +232,7 @@
             </div>
             <div class="payment__card">
               <h5>
-                <input type="radio" name="card-check" id="" />
+                <input type="radio" name="card-check" value="cashOnDelivery" id="" />
                 Cash on delivery
               </h5>
               <div class="payment__theme">
@@ -243,7 +243,7 @@
             </div>
             <div class="payment__card">
               <h5 style="display: flex; gap: 5px; align-items: center">
-                <input type="radio" name="card-check" id="" />
+                <input type="radio" name="card-check" value="Paypal" id="" />
                 Paypal
                 <img src="dist/assets/img/payment-2.png" alt="" srcset="" />
               </h5>
@@ -267,7 +267,7 @@
           <button type="submit" class="checkoutArea__btn">PLACE ORDER</button>
         </div>
       </div>
-      <div class="checkoutArea__cartTotal cartTotal lastPart">
+      <div class="lastPart checkoutArea__cartTotal cartTotal ">
         <div class="cartTotal__container">
           <h4>Cart Totals</h4>
           <table class="cartTotal__table">

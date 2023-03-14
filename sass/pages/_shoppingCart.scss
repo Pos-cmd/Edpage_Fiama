@@ -88,7 +88,7 @@
 
   &__couponInput {
     background: #ebe8e8;
-    padding-inline-start: 1rem;
+    padding: 1rem;
   }
 
   &__cartUpdate {
@@ -110,9 +110,9 @@
     background: #4d4d4d;
   }
 
-  &__remove{
+  &__remove {
     cursor: pointer;
-    &:hover{
+    &:hover {
       color: #e55472;
     }
   }
