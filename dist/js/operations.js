@@ -555,6 +555,8 @@ export function getFormData() {
         formData[input.name] = input.value;
       });
       console.table(formData);
+      console.table(getBasketFlower());
+      console.log(`Le montant total s'élève a ${getCartAmount()}$"`);
     });
   }
 }
@@ -594,12 +596,17 @@ function countFlowersInBasket() {
  * @returns {void}
  */
 function displayCartAmount() {
-  let cart = getBasketFlower();
-  const amount = Object.entries(cart).reduce((acc, flower) => {
-    const [key, value] = flower;
-    return acc + Number(value.price) * Number(value.quantity);
-  }, 0);
+  
+  const amount = getCartAmount();
 
   const sub_total = document.querySelectorAll(".cart-price");
   sub_total.forEach((price) => (price.innerText = formatCur(amount)));
+}
+
+function getCartAmount(){
+  let cart = getBasketFlower();
+  return  Object.entries(cart).reduce((acc, flower) => {
+    const [key, value] = flower;
+    return acc + Number(value.price) * Number(value.quantity);
+  }, 0);
 }
