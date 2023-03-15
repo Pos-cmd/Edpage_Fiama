@@ -3,7 +3,7 @@ import { init } from "./operations.js";
 const pageTitle = "Fiama - Flower Shop eCommerce HTML Template";
 
 const routes = {
-  404: {
+  "404page": {
     template: "/dist/templates/404.html",
     title: `404 | ${pageTitle}`,
     description: "Page not Found",
@@ -32,7 +32,7 @@ const locationHandler = async () => {
   }
 
 
-  const route = routes[location] || routes[404];
+  const route = routes[location] || routes["404page"];
   const template = await fetch(route.template).then((response) => response.text());
   document.getElementById("content").innerHTML = template;
   await init();
