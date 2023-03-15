@@ -42,8 +42,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: rgba(0, 100, 0, 0.05);
-  outline: 1px solid red;
   font-family: "Montserrat", "Sans-serif";
 }
 
@@ -1105,7 +1103,7 @@ a:hover {
 .checkoutArea img {
   height: 2.8125rem;
 }
-.checkoutArea button {
+.checkoutArea__btn {
   display: inline-block;
   font-size: 16px;
   font-weight: 500;
@@ -1114,6 +1112,9 @@ a:hover {
   color: #fff;
   background-color: #e55472;
   border: none;
+}
+.checkoutArea__btn:hover {
+  color: #fff;
 }
 
 .payment {

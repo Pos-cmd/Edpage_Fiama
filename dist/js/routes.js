@@ -13,6 +13,11 @@ const routes = {
     title: `Home | ${pageTitle}`,
     description: "This is the home page",
   },
+  "home": {
+    template: "/dist/templates/index.html",
+    title: `Home | ${pageTitle}`,
+    description: "This is the home page",
+  },
   cart: {
     template: "/dist/templates/cart.html",
     title: `Cart | ${pageTitle}`,

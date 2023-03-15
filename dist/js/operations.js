@@ -555,7 +555,6 @@ export function getFormData() {
         formData[input.name] = input.value;
       });
       console.table(formData);
-      console.table(getBasketFlower);
     });
   }
 }
