@@ -596,16 +596,22 @@ function countFlowersInBasket() {
  * @returns {void}
  */
 function displayCartAmount() {
-  
   const amount = getCartAmount();
+  const shipHand = amount / 4;
 
   const sub_total = document.querySelectorAll(".cart-price");
+  const order_total = document.querySelectorAll(".order-total");
+  const ship_hand = document.querySelectorAll(".shipHand");
+
+  const totalOrder = amount + shipHand;
   sub_total.forEach((price) => (price.innerText = formatCur(amount)));
+  ship_hand.forEach((ship) => (ship.innerText = formatCur(shipHand)));
+  order_total.forEach((order) => (order.innerText = formatCur(totalOrder)));
 }
 
-function getCartAmount(){
+function getCartAmount() {
   let cart = getBasketFlower();
-  return  Object.entries(cart).reduce((acc, flower) => {
+  return Object.entries(cart).reduce((acc, flower) => {
     const [key, value] = flower;
     return acc + Number(value.price) * Number(value.quantity);
   }, 0);
