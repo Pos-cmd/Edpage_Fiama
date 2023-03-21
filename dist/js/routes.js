@@ -1,4 +1,5 @@
 import { init } from "./operations.js";
+import { validateInput } from "./validation.js";
 
 const pageTitle = "Fiama - Flower Shop eCommerce HTML Template";
 
@@ -41,6 +42,7 @@ const locationHandler = async () => {
   const template = await fetch(route.template).then((response) => response.text());
   document.getElementById("content").innerHTML = template;
   await init();
+  await validateInput();
   document.title = route.title;
   document
     .querySelector("meta[name=description]")

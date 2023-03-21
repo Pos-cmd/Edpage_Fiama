@@ -4,7 +4,7 @@
 
   &__container {
     width: 90%;
-    height: 100%;   
+    height: 100%;
     min-width: 300px;
   }
 
@@ -25,6 +25,10 @@
 
   &__textArea {
     padding-inline: 20px;
+    width: 100%;
+    h6{
+      width: 100%;
+    }
   }
 
   p {
@@ -36,29 +40,19 @@
   &__row {
     display: flex;
     flex-wrap: wrap;
+    &.second {
+      width: 100%;
+    }
   }
 
   &__transact {
     display: flex;
   }
 
-  &__payment, &__cartTotal {
+  &__payment,
+  &__cartTotal {
     width: 50%;
     padding-inline: 1.875rem;
-  }
-
-  .rowBottom {
-    &:nth-child(1) {
-      width: 33.3%;
-    }
-
-    &:nth-child(2) {
-      width: 100%;
-    }
-
-    &:nth-last-child(-n + 3) {
-      width: 33.3%;
-    }
   }
 
   &__inputItem {
@@ -68,6 +62,17 @@
   &__input {
     position: relative;
     margin-inline: 1.25rem;
+    &.success {
+      small {
+        color: #2ecc71;
+      }
+    }
+
+    &.error {
+      small {
+        color: #e74c3c;
+      }
+    }
   }
 
   &__select {
@@ -93,6 +98,7 @@
 
   textarea {
     padding: 15px 20px;
+    width: 100%;
     min-height: 150px;
   }
 
@@ -110,7 +116,8 @@
     }
   }
 
-  &__select, h6 {
+  &__select,
+  h6 {
     font-size: 16px;
     font-weight: 500;
     padding-left: 1.25rem;
@@ -145,7 +152,7 @@
     color: #fff;
     background-color: #e55472;
     border: none;
-    &:hover{
+    &:hover {
       color: #fff;
     }
   }
@@ -170,6 +177,20 @@
     }
   }
 
+  &__container {
+    &.success {
+      small {
+        color: #2ecc71;
+      }
+    }
+
+    &.error {
+      small {
+        color: #e74c3c;
+      }
+    }
+  }
+
   &__cardBody {
     display: none;
     padding: 0.9375rem 1.875rem;
@@ -179,7 +200,6 @@
   &__theme {
     display: none;
   }
-
 
   &__note > p {
     font-size: 0.8125rem;

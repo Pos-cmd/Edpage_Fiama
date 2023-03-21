@@ -11,7 +11,7 @@ export async function init() {
     const basket = getBasketFlower();
     displayFlowers(flowers);
     displayCart();
-    getFormData();
+    // getFormData();
     if (basket.length > 0) {
       displayCartAmount();
       displayQuantity();
@@ -392,7 +392,7 @@ function formatCur(value) {
  *
  * @returns {{name, image, price, quantity}|undefined} La liste des fleurs enregistrer dans le localStorage
  */
-function getBasketFlower() {
+export function getBasketFlower() {
   let flowerCart = localStorage.getItem("flower");
   if (flowerCart == null) {
     return [];
@@ -543,23 +543,7 @@ function updateCart() {
   }
 }
 
-export function getFormData() {
-  const purchase_btn = document.querySelector(".checkoutArea__btn");
-  if (purchase_btn) {
-    purchase_btn.addEventListener("click", () => {
-      const formSection = document.querySelector(".checkoutArea");
-      const inputs = formSection.querySelectorAll("input, select");
-      const formData = {};
-      console;
-      inputs.forEach((input) => {
-        formData[input.name] = input.value;
-      });
-      console.table(formData);
-      console.table(getBasketFlower());
-      console.log(`Le montant total s'élève a ${getCartAmount()}$"`);
-    });
-  }
-}
+
 
 /**
  * Function permettant de diminuer puis de supprimer une fleur dans le localsorage
@@ -609,7 +593,7 @@ function displayCartAmount() {
   order_total.forEach((order) => (order.innerText = formatCur(totalOrder)));
 }
 
-function getCartAmount() {
+export function getCartAmount() {
   let cart = getBasketFlower();
   return Object.entries(cart).reduce((acc, flower) => {
     const [key, value] = flower;

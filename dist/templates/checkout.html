@@ -1,9 +1,13 @@
 <section class="cartPage">
   <div class="cartPage__container">
-    <div class="cartPage__top"><h2>Checkout</h2></div>
+    <div class="cartPage__top">
+      <h2>Checkout</h2>
+    </div>
     <div class="cartPage__bottom">
       <div>
-        <a href="/"><h4>Home ></h4></a>
+        <a href="/">
+          <h4>Home ></h4>
+        </a>
       </div>
       <div><span> Checkout</span></div>
     </div>
@@ -12,286 +16,150 @@
 <section class="checkoutArea">
   <div class="checkoutArea__container">
     <div class="checkoutArea__items">
-      <!-- <div class="checkoutArea__returningCustomers">
-        <h5>Returning customer ?<a href="#"> Click here to login</a></h5>
-        <div class="checkoutArea__returningLogin">
-          <div class="checkoutArea__returningForm">
-            <p>Please Login your account</p>
-            <form action="#">
-              <div class="checkoutArea__row">
-                <div class="checkoutArea__inputItem">
-                  <div class="checkoutArea__input">
-                    <input
-                      type="text"
-                      name="name"
-                      placeholder="Enter your name"
-                    />
-                  </div>
-                </div>
-                <div class="checkoutArea__inputItem">
-                  <div class="checkoutArea__input">
-                    <input
-                      type="text"
-                      name="email"
-                      placeholder="Enter email address"
-                    />
-                  </div>
-                </div>
-                <button
-                  style="margin-inline: 1.25rem"
-                  class="checkoutArea__returningBtn"
-                >
-                  Login
-                </button>
-                <label for="" style="display: flex; place-items: center"
-                  ><input type="checkbox" name="agree" />Remenber me</label
-                >
-                <div style="margin-inline-start: 1.25rem; width: 100%; padding-block-start: 1rem">
-                  <p>Lost your password</p>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-      <div class="checkoutArea__coupon">
-        <h5>Have a coupon ?<a href="#"> Click here to enter your code</a></h5>
-        <div class="checkoutArea__couponCode">
-          <div class="checkoutArea__couponForm">
-            <p>If you have a coupon code, please apply it below.</p>
-            <form action="#">
-              <input type="text" name="coupon-code" placeholder="Coupon code" />
-              <button style="background: #333;" class="checkouArea__couponBtn">Apply coupon</button>
-            </form>
-          </div>
-        </div>
-      </div> -->
-      <div class="checkoutArea__content">
-        <h4>Billings Details</h4>
-        <div class="checkoutArea__info">
-          <form action="">
+      <form action="">
+        <div class="checkoutArea__content">
+          <h4>Billings Details</h4>
+          <div class="checkoutArea__info">
             <h6>Personal Information</h6>
             <div class="checkoutArea__row">
               <div class="checkoutArea__inputItem rowTop">
                 <div class="checkoutArea__input">
-                  <input
-                    type="text"
-                    name="firstname"
-                    placeholder="First name"
-                    id=""
-                  />
+                  <small></small>
+                  <input type="text" name="firstname" placeholder="First name" id="firstname" />
                 </div>
               </div>
               <div class="checkoutArea__inputItem rowTop">
                 <div class="checkoutArea__input">
-                  <input
-                    type="text"
-                    name="lastname"
-                    placeholder="Last name"
-                    id=""
-                  />
+                  <small></small>
+                  <input type="text" name="lastname" placeholder="Last name" id="lastname" />
                 </div>
               </div>
               <div class="checkoutArea__inputItem rowTop">
                 <div class="checkoutArea__input">
-                  <input
-                    type="text"
-                    name="email"
-                    placeholder="Email address"
-                    id=""
-                  />
+                  <small></small>
+                  <input type="text" name="email" placeholder="Email address" id="email" />
                 </div>
               </div>
               <div class="checkoutArea__inputItem rowTop">
                 <div class="checkoutArea__input">
-                  <input
-                    type="text"
-                    name="phone-number"
-                    placeholder="Phone number"
-                    id=""
-                  />
+                  <small></small>
+                  <input type="text" name="phone-number" placeholder="Phone number" id="phoneNumber" />
                 </div>
               </div>
-              <!-- <div class="checkoutArea__inputItem rowTop">
-                <div class="checkoutArea__input">
-                  <input
-                    type="text"
-                    name="company_ame"
-                    placeholder="Company name (Optional)"
-                    id=""
-                  />
+              <div class="checkoutArea__row second">
+                <div class="checkoutArea__inputItem rowBottom">
+                  <h6>Address</h6>
+                  <div class="checkoutArea__input">
+                    <small></small>
+                    <input type="text" name="address" placeholder="House number and street name" id="address" />
+                  </div>
                 </div>
-              </div>
-              <div class="checkoutArea__inputItem rowTop">
-                <div class="checkoutArea__input">
-                  <input
-                    type="text"
-                    name="company_address"
-                    placeholder="Company address (Optional)"
-                    id=""
-                  />
-                </div>
-              </div> 
-            </div>-->
-            <div class="checkoutArea__row second">
-              <div class="checkoutArea__inputItem rowBottom">
-                <h6>Country</h6>
-                <div class="checkoutArea__input">
-                  <div class="checkoutArea__select">
-                    <select class="checkoutArea__select" id="country" name="country">
-                      <option value="">Select a country </option>
-                      <option value="autralia">Autralia</option>
-                      <option value="canada">Canada</option>
-                      <option value="china">China</option>
-                      <option value="morocco">Morocco</option>
-                    </select>
+                <div class="checkoutArea__inputItem rowBottom">
+                  <h6>Town/city</h6>
+                  <div class="checkoutArea__input">
+                    <small></small>
+                    <input type="text" name="town" placeholder="City" id="city" />
                   </div>
                 </div>
               </div>
-              <div class="checkoutArea__inputItem rowBottom">
-                <h6>Address</h6>
-                <div class="checkoutArea__row">
-                  <div class="checkoutArea__inputItem">
-                    <div class="checkoutArea__input">
-                      <input
-                        type="text"
-                        name="address"
-                        placeholder="House number and street name"
-                        id=""
-                      />
-                    </div>
-                  </div>
-                  <div class="checkoutArea__inputItem">
-                    <div class="checkoutArea__input">
-                      <input
-                        type="text"
-                        name="appartement"
-                        placeholder="Apartment, suite, unit, etc. (Optional)"
-                        id=""
-                      />
+              <p>
+                <label for="">
+                  <input type="checkbox" name="create-account" />
+                  Create an account ?
+                </label>
+              </p>
+              <div class="checkoutArea__textArea">
+                <h6>Order Notes (Optional)</h6>
+                <textarea name="Order note" placeholder="Notes about your order, e.g. special notes for delivery."
+                  cols="30" rows="6"></textarea>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="checkoutArea__transact">
+          <div class="lastPart checkoutArea__payment payment ">
+            <div class="payment__container">
+              <h4>Payment Method</h4>
+              <small></small>
+              <div class="payment__accord">
+                <div class="payment__card">
+                  <h5>
+                    <input type="radio" name="card-check" value="checkPayement" class="paymentType" />
+                    Check payments
+                  </h5>
+                  <div class="payment__theme">
+                    <div class="payment__cardBody">
+                      <p>
+                        Please send a check to Store Name, Store Street, Store Town,
+                        Store State / County, Store Postcode.
+                      </p>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="checkoutArea__inputItem rowBottom">
-                <h6>Town/city</h6>
-                <div class="checkoutArea__input">
-                  <input type="text" name="town" placeholder="City" />
+                <div class="payment__card">
+                  <h5>
+                    <input type="radio" name="card-check" value="cashOnDelivery" class="paymentType" />
+                    Cash on delivery
+                  </h5>
+                  <div class="payment__theme">
+                    <div class="payment__cardBody">
+                      <p>Pay with cash upon delivery.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="payment__card">
+                  <h5 style="display: flex; gap: 5px; align-items: center">
+                    <input type="radio" name="card-check" value="Paypal" class="paymentType" />
+                    Paypal
+                    <img src="dist/assets/img/payment-2.png" alt="" srcset="" />
+                  </h5>
+                  <div class="payment__theme">
+                    <div class="payment__cardBody">
+                      <p>
+                        Pay via PayPal; you can pay with your credit card if you
+                        don’t have a PayPal account.
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="checkoutArea__inputItem rowBottom">
-                <h6>State</h6>
-                <div class="checkoutArea__input">
-                  <input type="text" name="state" placeholder="State" />
-                </div>
+              <div class="payment__note">
+                <p>
+                  Your personal data will be used to process your order, support
+                  your experience throughout this website, and for other purposes
+                  described in our privacy policy.
+                </p>
               </div>
-              <div class="checkoutArea__inputItem rowBottom">
-                <h6>Zip</h6>
-                <div class="checkoutArea__input">
-                  <input type="text" name="zip" placeholder="Zip" />
-                </div>
-              </div>
-            </div>
-            <p>
-              <label for="">
-                <input type="checkbox" name="create-account" />
-                Create an account ?
-              </label>
-            </p>
-            <h6>Order Notes (Optional)</h6>
-            <div class="checkoutArea__textArea">
-              <textarea
-                name="Order note"
-                placeholder="Notes about your order, e.g. special notes for delivery."
-                cols="30"
-                rows="6"
-              ></textarea>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-    <div class="checkoutArea__transact">
-      <div class="lastPart checkoutArea__payment payment ">
-        <div class="payment__container">
-          <h4>Payment Method</h4>
-          <div class="payment__accord">
-            <div class="payment__card">
-              <h5>
-                <input type="radio" name="card-check" value="checkPayement" id="" />
-                Check payments
-              </h5>
-              <div class="payment__theme">
-                <div class="payment__cardBody">
-                  <p>
-                    Please send a check to Store Name, Store Street, Store Town,
-                    Store State / County, Store Postcode.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="payment__card">
-              <h5>
-                <input type="radio" name="card-check" value="cashOnDelivery" id="" />
-                Cash on delivery
-              </h5>
-              <div class="payment__theme">
-                <div class="payment__cardBody">
-                  <p>Pay with cash upon delivery.</p>
-                </div>
-              </div>
-            </div>
-            <div class="payment__card">
-              <h5 style="display: flex; gap: 5px; align-items: center">
-                <input type="radio" name="card-check" value="Paypal" id="" />
-                Paypal
-                <img src="dist/assets/img/payment-2.png" alt="" srcset="" />
-              </h5>
-              <div class="payment__theme">
-                <div class="payment__cardBody">
-                  <p>
-                    Pay via PayPal; you can pay with your credit card if you
-                    don’t have a PayPal account.
-                  </p>
-                </div>
-              </div>
+              <a href="#home" class="checkoutArea__btn">PLACE ORDER</a>
             </div>
           </div>
-          <div class="payment__note">
-            <p>
-              Your personal data will be used to process your order, support
-              your experience throughout this website, and for other purposes
-              described in our privacy policy.
-            </p>
+          <div class="lastPart checkoutArea__cartTotal cartTotal ">
+            <div class="cartTotal__container">
+              <h4>Cart Totals</h4>
+              <table class="cartTotal__table">
+                <tbody>
+                  <tr>
+                    <td>Cart Subtotal</td>
+                    <td class="cart-price">$0.00</td>
+                  </tr>
+                  <tr>
+                    <td>Shipping and handing</td>
+                    <td class="shipHand">$0.00</td>
+                  </tr>
+                  <tr>
+                    <td>Vat</td>
+                    <td>$0.00</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Order Total</strong></td>
+                    <td><strong class="order-total">$0.00</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
-          <a href="#home" class="checkoutArea__btn">PLACE ORDER</a>
         </div>
-      </div>
-      <div class="lastPart checkoutArea__cartTotal cartTotal ">
-        <div class="cartTotal__container">
-          <h4>Cart Totals</h4>
-          <table class="cartTotal__table">
-            <tbody>
-              <tr>
-                <td>Cart Subtotal</td>
-                <td class="cart-price">$0.00</td>
-              </tr>
-              <tr>
-                <td>Shipping and handing</td>
-                <td class="shipHand">$0.00</td>
-              </tr>
-              <tr>
-                <td>Vat</td>
-                <td>$0.00</td>
-              </tr>
-              <tr>
-                <td><strong>Order Total</strong></td>
-                <td><strong class="order-total">$0.00</strong></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
+      </form>
     </div>
-  </div>
 </section>

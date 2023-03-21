@@ -1012,6 +1012,10 @@ a:hover {
 }
 .checkoutArea__textArea {
   padding-inline: 20px;
+  width: 100%;
+}
+.checkoutArea__textArea h6 {
+  width: 100%;
 }
 .checkoutArea p {
   font-family: "Poppins";
@@ -1022,6 +1026,9 @@ a:hover {
   display: flex;
   flex-wrap: wrap;
 }
+.checkoutArea__row.second {
+  width: 100%;
+}
 .checkoutArea__transact {
   display: flex;
 }
@@ -1029,21 +1036,18 @@ a:hover {
   width: 50%;
   padding-inline: 1.875rem;
 }
-.checkoutArea .rowBottom:nth-child(1) {
-  width: 33.3%;
-}
-.checkoutArea .rowBottom:nth-child(2) {
-  width: 100%;
-}
-.checkoutArea .rowBottom:nth-last-child(-n+3) {
-  width: 33.3%;
-}
 .checkoutArea__inputItem {
   width: 50%;
 }
 .checkoutArea__input {
   position: relative;
   margin-inline: 1.25rem;
+}
+.checkoutArea__input.success small {
+  color: #2ecc71;
+}
+.checkoutArea__input.error small {
+  color: #e74c3c;
 }
 .checkoutArea__select {
   font-style: 0.875rem;
@@ -1066,6 +1070,7 @@ a:hover {
 }
 .checkoutArea textarea {
   padding: 15px 20px;
+  width: 100%;
   min-height: 150px;
 }
 .checkoutArea h5 {
@@ -1081,7 +1086,8 @@ a:hover {
   font-size: 18px;
   font-weight: 500;
 }
-.checkoutArea__select, .checkoutArea h6 {
+.checkoutArea__select,
+.checkoutArea h6 {
   font-size: 16px;
   font-weight: 500;
   padding-left: 1.25rem;
@@ -1133,6 +1139,12 @@ a:hover {
   font-weight: 300;
   line-height: 25px;
   margin-bottom: 0;
+}
+.payment__container.success small {
+  color: #2ecc71;
+}
+.payment__container.error small {
+  color: #e74c3c;
 }
 .payment__cardBody {
   display: none;
